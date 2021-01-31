@@ -1,9 +1,7 @@
-$nav-height-small: rem(49px);
-$nav-height-big: rem(88px);
 $nav-gutter: rem(35px);
 
 .navigation {
-  background-color: $color-background;
+  background-color: $color-white;
   overflow-x: scroll;
 
   &__list {
@@ -118,7 +116,7 @@ $nav-gutter: rem(35px);
       width: 0;
       height: rem(2px);
       background-color: $color-brand;
-      transition: width 250ms ease-in;
+      transition: width $timings-normal ease-in;
       position: absolute;
       bottom: 0;
     }

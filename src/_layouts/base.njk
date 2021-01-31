@@ -4,15 +4,20 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    {% block head %}
-      <title>{{ title }}</title>
-    {% endblock %}
+    {% if title %}
+      {% set pageTitle %}
+        {{ title }} {{ site.titleSeparator}}
+      {% endset %}
+    {% endif %}
+    <title>{{ pageTitle if title else '' }}{{ site.title }} {{ site.titleSeparator }} {{ site.author.name }}</title>
 
     <link rel="stylesheet" href="/static_assets/css/styles.css">
   </head>
-  <body>
+  <body class="{{ bodyClass }}">
     {% include "navigation.njk" %}
-    <h1>{{title}}</h1>
-    {{ content | safe }}
+
+    <main class="{{ bodyClass }}__main">
+      {{ content | safe }}
+    </main>
   </body>
 </html>

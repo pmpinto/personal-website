@@ -1,12 +1,32 @@
-@mixin text-title() {
-  font-size: $font-size-title;
-}
-
 @mixin text-caption($uppercase: false) {
   font-size: $font-size-caption;
+  font-weight: $font-weight-regular;
 
   @if $uppercase {
     text-transform: uppercase;
     letter-spacing: rem(4px);
   }
+}
+
+@mixin text-body() {
+  font-size: $font-size-body;
+  font-weight: $font-weight-regular;
+}
+
+@mixin text-subtitle() {
+  font-size: $font-size-subtitle;
+  font-weight: $font-weight-semibold;
+  line-height: 1.1;
+  margin: 0;
+}
+
+@mixin text-title() {
+  font-size: $font-size-title;
+  font-weight: $font-weight-extrabold;
+}
+
+@mixin text-jumbo() {
+  font-size: $font-size-jumbo;
+  font-weight: $font-weight-extrabold;
+  margin: 0;
 }

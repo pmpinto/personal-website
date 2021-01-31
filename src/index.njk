@@ -1,8 +1,11 @@
 ---
 layout: base
-title: This is homesss!
+bodyClass: home
+heading: Developer by trade.<br>Designer at heart.
 ---
 
-{% block head %}
-  <title>No way</title>
-{% endblock %}
+<header class="home__header">
+  <h1 class="home__heading">{{ heading | safe }}</h1>
+  <h2 class="home__subheading">I’m {{ site.author.name }} from {{ site.author.city }}, {{ site.author.country }}.</h2>
+  <a class="home__button" href="/history/">Tell me more</a>
+</header>

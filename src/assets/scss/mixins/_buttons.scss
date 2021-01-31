@@ -1,0 +1,17 @@
+@mixin button {
+  @include text-subtitle;
+
+  background-color: $color-white;
+  color: $color-text;
+  border-radius: rem(38px);
+  text-align: center;
+  padding: rem(22px) rem(50px);
+  text-decoration: none;
+  border: 1px solid $color-brand;
+  display: inline-block;
+  transition: transform $timings-fast ease-in-out;
+
+  &:hover {
+    transform: scale(1.1);
+  }
+}

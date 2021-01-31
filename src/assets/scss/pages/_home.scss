@@ -1,0 +1,38 @@
+.home {
+  background-color: $color-background;
+  color: $color-text;
+
+  &__main {
+    height: calc(100% - #{$nav-height-small});
+    text-align: center;
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    justify-content: center;
+    background-image: url('/static_assets/images/logo-red.svg');
+    background-repeat: no-repeat;
+    background-size: 100vw;
+    background-position: -17vw 41vh;
+
+    @include breakpoint-above-desktop-small {
+      height: calc(100% - #{$nav-height-big});
+    }
+  }
+
+  &__heading {
+    @include text-jumbo;
+
+    margin-bottom: unit(8);
+  }
+
+  &__subheading {
+    @include text-subtitle;
+
+    margin-bottom: unit(8);
+  }
+
+  &__button {
+    @include button;
+
+  }
+}
