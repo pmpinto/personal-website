@@ -1,0 +1,13 @@
+@import '../functions/rem';
+
+$font-family: 'Inter', 'Helvetica', sans-serif;
+
+$font-weight-normal: 400;
+$font-weight-semibold: 600;
+$font-weight-extrabold: 800;
+
+$font-size-caption: rem(12px);
+$font-size-body: rem(17px);
+$font-size-subtitle: rem(27.5px);
+$font-size-title: rem(44.5px);
+$font-size-jumbo: rem(72px);

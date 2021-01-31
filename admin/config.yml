@@ -1,17 +1,45 @@
+####################################################################################################
+# Backend
+####################################################################################################
 backend:
-  name: "github"
-  repo: "pmpinto/personal-website"
-  branch: "master"
+  name: github
+  repo: pmpinto/personal-website
+  branch: master
+  site_domain: pedropinto.me
+  base_url: https://api.netlify.com
+  auth_endpoint: auth
+  squash_merges: true
+  commit_messages:
+    create: 'content: Create {{collection}} “{{slug}}”'
+    update: 'content: Update {{collection}} “{{slug}}”'
+    delete: 'content: Delete {{collection}} “{{slug}}”'
+    uploadMedia: 'content: Upload “{{path}}”'
+    deleteMedia: 'content: Delete “{{path}}”'
+    openAuthoring: 'content: {{message}}'
 
-publish_mode: "editorial_workflow"
-media_folder: "src/assets/images"
-public_folder: "src/static_assets/images"
+####################################################################################################
+# Media
+####################################################################################################
+media_folder: src/static_assets/images
+public_folder: /static_assets/images
 
+####################################################################################################
+# Misc
+####################################################################################################
+publish_mode: editorial_workflow
+site_url: https://pedropinto.me
+# logo_url: /images/logo.svg
+
+
+####################################################################################################
+# Collections
+####################################################################################################
 collections:
   - name: "photographer"
     label: "Photographer"
     folder: "src/photographer"
     create: true
+    identifier_field: "date"
     fields:
       - name: "date"
         label: "Date"

@@ -7,7 +7,7 @@ focalLength: 105
 aperture: 4
 shutterSpeed: 1/100
 iso: 100
-image: /static_assets/images/photographer-_img2039.png
+image: /static_assets/images/uploads/photographer-_img2039.png
 categories:
   - animals
   - guarda

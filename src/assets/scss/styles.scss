@@ -1,9 +1,12 @@
-@import 'vars/colors';
-@import 'vars/fonts';
-@import 'vars/typography';
+@import '../../../node_modules/normalize.css/normalize';
 
-body {
-  background-color: $color-red;
-  font-family: $font-family;
-  font-weight: $font-weight-extrabold;
-}
+@import 'variables/colors';
+@import 'variables/fonts';
+@import 'variables/typography';
+@import 'variables/breakpoints';
+
+@import 'mixins/breakpoints';
+@import 'mixins/typography';
+
+@import 'includes/globals';
+@import 'includes/navigation';

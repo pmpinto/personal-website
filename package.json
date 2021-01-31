@@ -32,6 +32,7 @@
     "stylelint-scss": "^3.18.0"
   },
   "dependencies": {
+    "normalize.css": "^8.0.1",
     "sass": "^1.32.5"
   }
 }

@@ -1,19 +1,18 @@
+<!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  {% block head %}
-    <title>{{ title }}</title>
-  {% endblock %}
+    {% block head %}
+      <title>{{ title }}</title>
+    {% endblock %}
 
-  <style>
-    {% include "../assets/css/styles.css" ignore missing %}
-  </style>
-</head>
-<body>
-  {% include "navigation.njk" %}
-  <h1>{{title}}</h1>
-  {{ content | safe }}
-</body>
+    <link rel="stylesheet" href="/static_assets/css/styles.css">
+  </head>
+  <body>
+    {% include "navigation.njk" %}
+    <h1>{{title}}</h1>
+    {{ content | safe }}
+  </body>
 </html>

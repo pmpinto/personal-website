@@ -1,0 +1,12 @@
+@mixin text-title() {
+  font-size: $font-size-title;
+}
+
+@mixin text-caption($uppercase: false) {
+  font-size: $font-size-caption;
+
+  @if $uppercase {
+    text-transform: uppercase;
+    letter-spacing: rem(4px);
+  }
+}

@@ -1,0 +1,23 @@
+@mixin breakpoint-above($breakpoint-value) {
+  @media screen and (min-width: #{$breakpoint-value}) {
+    @content;
+  }
+}
+
+@mixin breakpoint-above-phone-small {
+  @include breakpoint-above($breakpoint-phone-small) {
+    @content;
+  }
+}
+
+@mixin breakpoint-above-tablet {
+  @include breakpoint-above($breakpoint-tablet) {
+    @content;
+  }
+}
+
+@mixin breakpoint-above-desktop-small {
+  @include breakpoint-above($breakpoint-desktop-small) {
+    @content;
+  }
+}
