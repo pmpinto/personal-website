@@ -10,6 +10,7 @@ module.exports = (eleventyConfig) => {
       input: "src",
       output: "dist",
       layouts: "_layouts",
+      data: "_data"
     },
     dataTemplateEngine: "njk",
     markdownTemplateEngine: "njk",

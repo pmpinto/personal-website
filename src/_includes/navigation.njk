@@ -1,9 +1,11 @@
 <nav class="navigation">
   <ul class="navigation__list">
     <li class="navigation__item navigation__item--home"><a class="navigation__link" href="/">Home</a></li>
-    <li class="navigation__item"><a class="navigation__link" href="/history/">The History</a></li>
-    <li class="navigation__item"><a class="navigation__link" href="/designer/">The Designer</a></li>
-    <li class="navigation__item"><a class="navigation__link" href="/photographer/">The Photographer</a></li>
-    <li class="navigation__item"><a class="navigation__link" href="/writer/">The Writer</a></li>
+
+    {% for link in site.navigation %}
+      <li class="navigation__item">
+        <a class="navigation__link" href="{{ link.url | url }}">{{ link.label }}</a>
+      </li>
+    {% endfor %}
   </ul>
 </nav>
