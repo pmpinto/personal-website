@@ -5,12 +5,13 @@
   "main": "index.js",
   "scripts": {
     "start": "npm-run-all sass --parallel watch:*",
-    "build": "npm-run-all build:*",
-    "sass": "sass --style=compressed --color src/assets/scss/styles.scss src/assets/css/styles.css",
+    "build": "npm run clean && npm-run-all build:*",
+    "clean": "rm -rf dist",
+    "sass": "sass --style=compressed --color src/assets/scss/styles.scss src/static_assets/css/styles.css",
     "eleventy": "npx @11ty/eleventy",
     "build:eleventy": "npm run eleventy",
     "build:sass": "npm run sass -- --stop-on-error",
-    "watch:eleventy": "rm -rf dist && npx @11ty/eleventy --serve --watch",
+    "watch:eleventy": "npm run clean && npx @11ty/eleventy --serve --watch",
     "watch:sass": "npm run sass -- --watch"
   },
   "keywords": [

@@ -1,7 +1,9 @@
 module.exports = (eleventyConfig) => {
 
-  // Copy CSS folder to dist
-  eleventyConfig.addPassthroughCopy("src/assets/css");
+  // Copy static_assets folder to dist
+  eleventyConfig.addPassthroughCopy("src/static_assets");
+  // Copy admin (CMS) folder to dist
+  eleventyConfig.addPassthroughCopy("admin");
 
   return {
     dir: {

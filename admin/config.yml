@@ -1,0 +1,21 @@
+backend:
+  name: "github"
+  repo: "pmpinto/personal-website"
+  branch: "master"
+
+publish_mode: "editorial_workflow"
+media_folder: "src/assets/images"
+public_folder: "src/static_assets/images"
+
+collections:
+  - name: "photographer"
+    label: "Photographer"
+    folder: "src/photographer"
+    create: true
+    fields:
+      - name: "date"
+        label: "Date"
+        widget: "date"
+      - name: "image"
+        label: "Image"
+        widget: "image"
