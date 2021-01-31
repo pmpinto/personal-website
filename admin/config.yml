@@ -20,7 +20,7 @@ backend:
 ####################################################################################################
 # Media
 ####################################################################################################
-media_folder: src/static_assets/images
+media_folder: src/static_assets/images/uploads
 public_folder: /static_assets/images
 
 ####################################################################################################
@@ -39,24 +39,55 @@ collections:
   ## Collection: Site configs
   ##################################################################################################
   - name: siteConfigs
-    label: Configs
+    label: ⚙️ Configs
     files:
       - name: navigation
-        label: Navigation
+        label: 👉 Navigation
         file: src/_data/navigation.json
+        editor:
+          preview: false
         fields:
-          - name: label
-            label: Label
-            widget: string
-          - name: url
-            label: URL
-            widget: string
+          - name: links
+            label: Links
+            label_singular: link
+            widget: list
+            fields:
+              - name: label
+                label: Label
+                widget: string
+              - name: url
+                label: URL
+                widget: string
+
+  ##################################################################################################
+  ## Collection: History
+  ##################################################################################################
+  - name: history
+    label: 📜 The History
+    folder: src/history
+    create: true
+    fields:
+      - name: title
+        label: Title
+        widget: string
+
+  ##################################################################################################
+  ## Collection: Designer
+  ##################################################################################################
+  - name: designer
+    label: 👨🏻‍🎨 The Designer
+    folder: src/designer
+    create: true
+    fields:
+      - name: title
+        label: Title
+        widget: string
 
   ##################################################################################################
   ## Collection: Photographer
   ##################################################################################################
   - name: photographer
-    label: Photographer
+    label: 📷 The Photographer
     folder: src/photographer
     create: true
     identifier_field: date
@@ -67,3 +98,15 @@ collections:
       - name: image
         label: Image
         widget: image
+
+  ##################################################################################################
+  ## Collection: Writer
+  ##################################################################################################
+  - name: writer
+    label: ✍️ The Writer
+    folder: src/blog
+    create: true
+    fields:
+      - name: title
+        label: Title
+        widget: string
