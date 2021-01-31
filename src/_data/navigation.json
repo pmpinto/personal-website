@@ -1,5 +1,5 @@
 {
-  "navigation": [
+  "links": [
     { "label": "The History", "url": "/history/" },
     { "label": "The Designer", "url": "/designer/" },
     { "label": "The Photographer", "url": "/photographer/" },

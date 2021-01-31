@@ -35,15 +35,35 @@ site_url: https://pedropinto.me
 # Collections
 ####################################################################################################
 collections:
-  - name: "photographer"
-    label: "Photographer"
-    folder: "src/photographer"
+  ##################################################################################################
+  ## Collection: Site configs
+  ##################################################################################################
+  - name: siteConfigs
+    label: Configs
+    files:
+      - name: navigation
+        label: Navigation
+        file: src/_data/navigation.json
+        fields:
+          - name: label
+            label: Label
+            widget: string
+          - name: url
+            label: URL
+            widget: string
+
+  ##################################################################################################
+  ## Collection: Photographer
+  ##################################################################################################
+  - name: photographer
+    label: Photographer
+    folder: src/photographer
     create: true
-    identifier_field: "date"
+    identifier_field: date
     fields:
-      - name: "date"
-        label: "Date"
-        widget: "date"
-      - name: "image"
-        label: "Image"
-        widget: "image"
+      - name: date
+        label: Date
+        widget: date
+      - name: image
+        label: Image
+        widget: image
