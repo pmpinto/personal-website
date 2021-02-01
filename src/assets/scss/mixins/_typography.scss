@@ -9,11 +9,33 @@
 }
 
 @mixin text-body() {
-  font-size: $font-size-body;
+  font-size: $font-size-caption;
   font-weight: $font-weight-regular;
+
+  @include breakpoint-above-tablet {
+    font-size: $font-size-body;
+    font-weight: $font-weight-semibold;
+  }
 }
 
 @mixin text-subtitle() {
+  font-size: $font-size-caption;
+  font-weight: $font-weight-semibold;
+  line-height: 1.1;
+  margin: 0;
+
+  @include breakpoint-above-tablet {
+    font-size: $font-size-body;
+    font-weight: $font-weight-semibold;
+  }
+
+  @include breakpoint-above-desktop-small {
+    font-size: $font-size-subtitle;
+    font-weight: $font-weight-semibold;
+  }
+}
+
+@mixin text-title() {
   font-size: $font-size-body;
   font-weight: $font-weight-semibold;
   line-height: 1.1;
@@ -21,17 +43,10 @@
 
   @include breakpoint-above-tablet {
     font-size: $font-size-subtitle;
-    font-weight: $font-weight-semibold;
+    font-weight: $font-weight-extrabold;
   }
-}
 
-@mixin text-title() {
-  font-size: $font-size-subtitle;
-  font-weight: $font-weight-semibold;
-  line-height: 1.1;
-  margin: 0;
-
-  @include breakpoint-above-tablet {
+  @include breakpoint-above-desktop-small {
     font-size: $font-size-title;
     font-weight: $font-weight-extrabold;
   }
@@ -44,6 +59,11 @@
   margin: 0;
 
   @include breakpoint-above-tablet {
+    font-size: $font-size-title;
+    font-weight: $font-weight-extrabold;
+  }
+
+  @include breakpoint-above-desktop-small {
     font-size: $font-size-jumbo;
     font-weight: $font-weight-extrabold;
   }

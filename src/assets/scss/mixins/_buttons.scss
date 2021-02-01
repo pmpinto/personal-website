@@ -1,11 +1,12 @@
 @mixin button {
-  @include text-subtitle;
+  @include text-body;
 
+  font-weight: $font-weight-semibold;
   background-color: $color-white;
   color: $color-text;
-  border-radius: rem(38px);
+  border-radius: unit(4);
   text-align: center;
-  padding: rem(22px) rem(50px);
+  padding: unit(2) unit(4);
   text-decoration: none;
   border: 1px solid $color-brand;
   display: inline-block;
@@ -13,5 +14,12 @@
 
   &:hover {
     transform: scale(1.1);
+  }
+
+  @include breakpoint-above-tablet {
+    @include text-subtitle;
+
+    border-radius: unit(6);
+    padding: unit(3) unit(6);
   }
 }

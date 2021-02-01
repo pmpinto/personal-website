@@ -3,7 +3,7 @@
   color: $color-text;
 
   &__main {
-    height: calc(100% - #{$nav-height-small});
+    height: 100%;
     text-align: center;
     display: flex;
     align-items: center;
@@ -13,24 +13,33 @@
     background-repeat: no-repeat;
     background-size: 100vw;
     background-position: -17vw 41vh;
+    padding: unit(8) unit(4);
+
+    @include breakpoint-above-tablet {
+      padding: unit(10) unit(10);
+    }
 
     @include breakpoint-above-desktop-small {
-      height: calc(100% - #{$nav-height-big});
+      padding: unit(14) unit(14);
+    }
+
+    @include breakpoint-above-desktop-small {
+      // height: 80vh;
     }
   }
 
   &__header {
-    padding: unit(8) unit(3);
 
-    @include breakpoint-above-desktop-small {
-      padding: unit(8) unit(4);
-    }
   }
 
   &__heading {
     @include text-jumbo;
 
-    margin-bottom: unit(3);
+    margin-bottom: unit(4);
+
+    @include breakpoint-above-tablet {
+      margin-bottom: unit(6);
+    }
 
     @include breakpoint-above-desktop-small {
       margin-bottom: unit(8);
@@ -40,11 +49,18 @@
   &__subheading {
     @include text-subtitle;
 
-    margin-bottom: unit(8);
+    margin-bottom: unit(4);
+
+    @include breakpoint-above-tablet {
+      margin-bottom: unit(6);
+    }
+
+    @include breakpoint-above-desktop-small {
+      margin-bottom: unit(8);
+    }
   }
 
   &__button {
     @include button;
-
   }
 }
