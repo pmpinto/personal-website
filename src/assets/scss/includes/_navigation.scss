@@ -63,6 +63,10 @@ $nav-gutter: rem(35px);
       z-index: 100;
       box-shadow: $nav-gutter / 2 0 $nav-gutter / 2 $color-grey-light;
 
+      &:hover {
+        background-color: $color-action-hover;
+      }
+
       @include breakpoint-above-tablet {
         background-size: rem(30px);
         height: $nav-height-big;
@@ -115,8 +119,8 @@ $nav-gutter: rem(35px);
       display: block;
       width: 0;
       height: rem(2px);
-      background-color: $color-brand;
-      transition: width $timings-normal ease-in;
+      background-color: $color-action;
+      transition: width $timings-normal ease-in-out;
       position: absolute;
       bottom: 0;
     }

@@ -19,10 +19,22 @@
     }
   }
 
+  &__header {
+    padding: unit(8) unit(3);
+
+    @include breakpoint-above-desktop-small {
+      padding: unit(8) unit(4);
+    }
+  }
+
   &__heading {
     @include text-jumbo;
 
-    margin-bottom: unit(8);
+    margin-bottom: unit(3);
+
+    @include breakpoint-above-desktop-small {
+      margin-bottom: unit(8);
+    }
   }
 
   &__subheading {
