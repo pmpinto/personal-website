@@ -11,3 +11,6 @@ $color-background: $color-grey-light;
 
 $color-theme-dark-text: $color-grey-light;
 $color-theme-dark-background: $color-grey-dark;
+
+$color-action: $color-brand;
+$color-action-hover: lighten($color-action, 5%);

@@ -3,7 +3,7 @@
   color: $color-text;
 
   &__main {
-    height: 100%;
+    min-height: 100vh;
     text-align: center;
     display: flex;
     align-items: center;
@@ -11,25 +11,22 @@
     justify-content: center;
     background-image: url('/static_assets/images/logo-red.svg');
     background-repeat: no-repeat;
-    background-size: 100vw;
-    background-position: -17vw 41vh;
+    background-size: 150vw;
+    background-position: -60vw 42vh;
     padding: unit(8) unit(4);
 
     @include breakpoint-above-tablet {
       padding: unit(10) unit(10);
+      background-size: 100vw;
+      background-position: -17vw 41vh;
     }
 
     @include breakpoint-above-desktop-small {
       padding: unit(14) unit(14);
     }
-
-    @include breakpoint-above-desktop-small {
-      // height: 80vh;
-    }
   }
 
   &__header {
-
   }
 
   &__heading {

@@ -3,6 +3,10 @@ $nav-gutter: rem(35px);
 .navigation {
   background-color: $color-white;
   overflow-x: scroll;
+  position: fixed;
+  width: 100vw;
+  top: 0;
+  left: 0;
 
   &__list {
     display: flex;
@@ -11,23 +15,22 @@ $nav-gutter: rem(35px);
     margin: 0;
     padding: 0;
     padding-left: rem(110px);
-    // padding-right: $nav-gutter;
     list-style: none;
     height: $nav-height-small;
     white-space: nowrap;
 
-    &::after {
+    &::after { // Right gradient mask
       content: '';
       width: $nav-gutter;
       height: $nav-height-small;
-      background-color: $color-grey-light;
+      background-color: $color-white;
       // stylelint-disable-next-line
       background: linear-gradient(
         90deg,
-        fade-out($color-grey-light, 1) 0%,
-        $color-grey-light 75%
+        fade-out($color-white, 1) 0%,
+        $color-white 75%
       );
-      position: absolute;
+      position: fixed;
       right: 0;
       top: 0;
     }
@@ -56,20 +59,24 @@ $nav-gutter: rem(35px);
       background-repeat: no-repeat;
       background-position: center center;
       background-size: rem(17px);
-      position: absolute;
+      position: fixed;
       left: 0;
       top: 0;
       height: $nav-height-small;
       z-index: 100;
-      box-shadow: $nav-gutter / 2 0 $nav-gutter / 2 $color-grey-light;
-
-      &:hover {
-        background-color: $color-action-hover;
-      }
+      box-shadow: $nav-gutter / 2 0 $nav-gutter / 2 $color-white;
+      transition:
+        background-size $timings-slow ease-in-out,
+        background-position $timings-slow ease-in-out;
 
       @include breakpoint-above-tablet {
-        background-size: rem(30px);
+        background-size: unit(4);
         height: $nav-height-big;
+
+        &:hover {
+          background-position: bottom unit(2.4) left unit(2.4);
+          background-size: unit(15);
+        }
       }
 
       @include breakpoint-above-desktop-small {
@@ -110,6 +117,11 @@ $nav-gutter: rem(35px);
 
 .navigation__item:not(.navigation__item--home) {
   margin-right: $nav-gutter;
+  height: 100%;
+
+  @include breakpoint-above-desktop-small {
+    height: auto;
+  }
 
   .navigation__link {
     position: relative;
@@ -127,7 +139,6 @@ $nav-gutter: rem(35px);
 
     &:hover {
       &::after {
-        // background-color: $color-brand;
         width: 100%;
       }
     }

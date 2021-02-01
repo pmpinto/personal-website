@@ -3,7 +3,14 @@
   font-family: $font-family;
 }
 
-html, body {
+body {
+  @include breakpoint-above-tablet {
+    padding-top: $nav-height-big;
+  }
+}
+
+html,
+body {
   height: 100%;
 }
 
