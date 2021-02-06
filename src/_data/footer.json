@@ -1,0 +1,15 @@
+{
+  "footer": {
+    "heading": "Developer by trade.<br>Designer at heart.",
+    "hosted": "Hosted on <a href='https://github.com/pmpinto/personal-website' target='_blank' rel='noopener noreferrer' class='footer__link'>GitHub</a>.",
+    "handcrafted": "Handcrafted in <a href='https://goo.gl/maps/swsnriywYEKBYqXd9' target='_blank' rel='noopener noreferrer' class='footer__link'>Portugal</a>.",
+    "links": [
+      { "label": "GitHub", "url": "https://github.com/pmpinto/" },
+      { "label": "Twitter", "url": "https://twitter.com/pmpinto" },
+      { "label": "Last.fm", "url": "https://www.last.fm/user/xoldmanx" },
+      { "label": "Mail", "url": "mailto:pedro@pedropinto.me" }
+    ],
+    "yearCreated": 2010,
+    "yearCurrent": 2021
+  }
+}

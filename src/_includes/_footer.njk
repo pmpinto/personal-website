@@ -1,17 +1,20 @@
 <footer class="footer">
+  <div class="footer__ribbon">
+    <img class="footer__logo" src="/static_assets/images/logo-white.svg" alt="Logo">
+  </div>
 
-  <div class="grid-row">
-    <div class="grid-col-1">1</div>
-    <div class="grid-col-1">1</div>
-    <div class="grid-col-1">1</div>
-    <div class="grid-col-1">1</div>
-    <div class="grid-col-1">1</div>
-    <div class="grid-col-1">1</div>
-    <div class="grid-col-1">1</div>
-    <div class="grid-col-1">1</div>
-    <div class="grid-col-1">1</div>
-    <div class="grid-col-1">1</div>
-    <div class="grid-col-1">1</div>
-    <div class="grid-col-1">1</div>
+  <div class="footer__top">
+    <p class="footer__title">{{ footer.footer.heading | safe }}</p>
+    <p class="footer__hosted">{{ footer.footer.hosted | safe }}</p>
+    <p class="footer__handcrafted">{{ footer.footer.handcrafted | safe }}</p>
+  </div>
+
+  <div class="footer__bottom">
+    <ul class="footer__list">
+    {% for link in footer.footer.links %}
+      <li><a href="{{ link.url }}" class="footer__link">{{ link.label }}</a></li>
+    {% endfor %}
+    </ul>
+    <p class="footer__author"><a href="/" class="footer__link">{{ site.domain }}</a>, {{ footer.footer.yearCreated }} — {{ footer.footer.yearCurrent }}</p>
   </div>
 </footer>

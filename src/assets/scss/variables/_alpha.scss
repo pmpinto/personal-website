@@ -1,0 +1,10 @@
+$alpha-1: $unit-base-unitless / ($unit-base-unitless * 6); // 0.16
+$alpha-2: $unit-base-unitless / ($unit-base-unitless * 4); // 0.25
+$alpha-3: $unit-base-unitless / ($unit-base-unitless * 3); // 0.33
+$alpha-4: $unit-base-unitless / ($unit-base-unitless * 2); // 0.5
+
+$alpha-5: $alpha-4 + $alpha-1; // 0.66
+$alpha-6: $alpha-4 + $alpha-2; // 0.75
+$alpha-7: $alpha-4 + $alpha-3; // 0.83
+$alpha-8: $alpha-4 + $alpha-4; // 1
+

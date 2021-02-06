@@ -12,8 +12,6 @@ $columns: $grid-total-columns;
 
 @while $columns > 0 {
   .grid-col-#{$columns} {
-    background-color: tomato;
-
     @include breakpoint-above-tablet {
       @include grid($columns, 6);
     }

@@ -26,3 +26,11 @@
     padding-bottom: 100%;
   }
 }
+
+@mixin grid-indent($columns: 0, $property: margin-left) {
+  #{$property}: calc(#{percentage($columns / $grid-total-columns)} + #{$grid-gutter-width});
+}
+
+@mixin grid-indent-right($columns: 0, $property: margin-right) {
+  #{$property}: calc(#{percentage($columns / $grid-total-columns)} + #{$grid-gutter-width});
+}

@@ -4,6 +4,7 @@
 }
 
 body {
+  background-color: $color-background;
   padding-top: $nav-height-small;
 
   @include breakpoint-above-tablet {
