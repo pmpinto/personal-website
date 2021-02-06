@@ -1,0 +1,31 @@
+.grid-row {
+  @include breakpoint-above-tablet {
+    @include grid-row();
+
+    margin-top: $grid-gutter-width / 1;
+    margin-bottom: $grid-gutter-width / 1;
+  }
+}
+
+// Generate atomic CSS classes for grid columns
+$columns: $grid-total-columns;
+
+@while $columns > 0 {
+  .grid-col-#{$columns} {
+    background-color: tomato;
+
+    @include breakpoint-above-tablet {
+      @include grid($columns, 6);
+    }
+
+    @include breakpoint-above-desktop-small {
+      @include grid($columns, 12);
+    }
+
+    &:last-of-type {
+      margin-right: 0;
+    }
+  }
+
+  $columns: $columns - 1;
+}

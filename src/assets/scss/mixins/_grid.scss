@@ -1,0 +1,28 @@
+@mixin grid-row() {
+  display: flex;
+  flex-wrap: nowrap;
+  justify-content: space-around;
+  margin-left: $grid-gutter-width / -2;
+}
+
+@mixin grid($columns: 1, $total-columns: $grid-total-columns) {
+  @include grid-dimension($columns, $total-columns);
+
+  margin-left: $grid-gutter-width / 2;
+  margin-right: $grid-gutter-width / 2;
+}
+
+@mixin grid-dimension($columns: 1, $total-columns: $grid-total-columns, $property: width) {
+  #{$property}: percentage($columns / $total-columns);
+}
+
+@mixin grid-square($columns: 1) {
+  @include grid-dimension($columns, 12);
+
+  &::after {
+    // Force square
+    content: '';
+    display: block;
+    padding-bottom: 100%;
+  }
+}

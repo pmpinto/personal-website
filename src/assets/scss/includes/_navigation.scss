@@ -1,5 +1,3 @@
-$nav-gutter: rem(35px);
-
 .navigation {
   background-color: $color-white;
   overflow-x: scroll;
@@ -14,15 +12,16 @@ $nav-gutter: rem(35px);
     justify-content: flex-start;
     margin: 0;
     padding: 0;
-    padding-left: rem(110px);
+    padding-left: unit(12);
     list-style: none;
-    height: $nav-height-small;
     white-space: nowrap;
 
     &::after { // Right gradient mask
+      @include grid-dimension(1);
+      @include grid-dimension(1, $property: padding-bottom);
+
       content: '';
-      width: $nav-gutter;
-      height: $nav-height-small;
+      display: block;
       background-color: $color-white;
       // stylelint-disable-next-line
       background: linear-gradient(
@@ -30,72 +29,106 @@ $nav-gutter: rem(35px);
         fade-out($color-white, 1) 0%,
         $color-white 75%
       );
+      pointer-events: none;
       position: fixed;
       right: 0;
       top: 0;
     }
 
     @include breakpoint-above-tablet {
-      padding-left: $nav-height-big + $nav-gutter * 2;
-      height: $nav-height-big;
+      padding-left: unit(16);
     }
 
     @include breakpoint-above-desktop-small {
+      height: unit(10.5);
       padding-left: 0;
       white-space: normal;
       justify-content: flex-end;
+      align-items: center;
 
       &::after {
         display: none;
       }
     }
+
+    @include breakpoint-above-desktop-medium {
+      height: unit(12.5);
+    }
+
+    @include breakpoint-above-desktop-large {
+      height: unit(14.5);
+    }
   }
 
-  &__item {
-    &--home {
-      margin-right: auto;
-      background-color: $color-brand;
-      background-image: url('/static_assets/images/logo-white.svg');
-      background-repeat: no-repeat;
-      background-position: center center;
-      background-size: rem(17px);
-      position: fixed;
-      left: 0;
-      top: 0;
-      height: $nav-height-small;
-      z-index: 100;
-      box-shadow: $nav-gutter / 2 0 $nav-gutter / 2 $color-white;
-      transition:
-        background-size $timings-slow ease-in-out,
-        background-position $timings-slow ease-in-out;
+  &__item--home {
+    width: $nav-height-small;
+    height: $nav-height-small;
+    margin-right: auto;
+    background-color: $color-brand;
+    background-image: url('/static_assets/images/logo-white.svg');
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: unit(2);
+    position: fixed;
+    left: 0;
+    top: 0;
+    z-index: 100;
+    box-shadow: $grid-gutter-width / 2 0 $grid-gutter-width / 2 $color-white;
+    transition:
+      background-size $timings-slow ease-in-out,
+      background-position $timings-slow ease-in-out;
 
-      @include breakpoint-above-tablet {
-        background-size: unit(4);
-        height: $nav-height-big;
+    @include breakpoint-above-tablet {
+      @include grid-square(1);
 
-        &:hover {
-          background-position: bottom unit(2.4) left unit(2.4);
-          background-size: unit(15);
-        }
+      height: auto;
+      background-size: unit(3);
+
+      &:hover {
+        background-position: bottom unit(2) left unit(2);
+        background-size: unit(11);
       }
+    }
 
-      @include breakpoint-above-desktop-small {
-        box-shadow: none;
+    @include breakpoint-above-desktop-small {
+      box-shadow: none;
+      background-size: unit(3.5);
+
+      &:hover {
+        background-position: bottom unit(2.4) left unit(2.4);
+        background-size: unit(15);
+      }
+    }
+
+    @include breakpoint-above-desktop-medium {
+      background-size: unit(4.5);
+
+      &:hover {
+        background-position: bottom unit(2.8) left unit(2.8);
+        background-size: unit(17);
+      }
+    }
+
+    @include breakpoint-above-desktop-large {
+      background-size: unit(5.5);
+
+      &:hover {
+        background-position: bottom unit(3.7) left unit(3.7);
+        background-size: unit(19);
       }
     }
   }
 
   &__link {
-    @include text-caption($uppercase: true);
+    @include text-navigation();
 
+    line-height: $nav-height-small;
     text-decoration: none;
     color: $color-text;
-    height: 100%;
     display: block;
-    line-height: $nav-height-small;
 
     @include breakpoint-above-tablet {
-      line-height: $nav-height-big;
+      line-height: 537%; // 🤷‍♂️
     }
 
     @include breakpoint-above-desktop-small {
@@ -107,21 +140,18 @@ $nav-gutter: rem(35px);
 .navigation__item--home .navigation__link {
   color: transparent;
   display: block;
-  width: $nav-height-small;
-  height: 100%;
+  width: 100%;
+  height: $nav-height-small;
+  position: absolute;
 
   @include breakpoint-above-tablet {
-    width: $nav-height-big;
+    height: 100%;
   }
 }
 
 .navigation__item:not(.navigation__item--home) {
-  margin-right: $nav-gutter;
+  margin-right: $grid-gutter-width;
   height: 100%;
-
-  @include breakpoint-above-desktop-small {
-    height: auto;
-  }
 
   .navigation__link {
     position: relative;
@@ -143,6 +173,10 @@ $nav-gutter: rem(35px);
       }
     }
   }
+
+  @include breakpoint-above-desktop-small {
+    height: auto;
+  }
 }
 
 .navigation__item:last-of-type {
@@ -150,7 +184,7 @@ $nav-gutter: rem(35px);
 
   // stylelint-disable-next-line
   .navigation__link {
-    margin-right: $nav-gutter;
+    margin-right: $grid-gutter-width;
   }
 }
 

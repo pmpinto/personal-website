@@ -8,13 +8,17 @@
 @import 'variables/timings';
 
 @import 'mixins/breakpoints';
+@import 'mixins/grid';
 @import 'mixins/typography';
 @import 'mixins/buttons';
 
 @import 'functions/rem';
 @import 'functions/unit';
 
+@import 'utils/grid';
+
 @import 'includes/globals';
 @import 'includes/navigation';
+@import 'includes/footer';
 
 @import 'pages/home';

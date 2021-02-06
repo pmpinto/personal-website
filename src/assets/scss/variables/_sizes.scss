@@ -1,4 +1,13 @@
+@import '../functions/unit';
+
 $unit-base: rem(8px);
 
+// $grid-column-width: 6.1111%;
+// $grid-gutter-width: 2.2222%;
+$grid-total-columns: 12;
+$grid-column-width: unit(11);
+$grid-gutter-width: unit(4);
+
 $nav-height-small: rem(49px);
-$nav-height-big: rem(88px);
+$nav-height-big: unit(11);
+

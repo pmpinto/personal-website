@@ -14,10 +14,14 @@
     <link rel="stylesheet" href="/static_assets/css/styles.css">
   </head>
   <body class="{{ bodyClass }}">
-    {% include "navigation.njk" %}
+    {% include "_navigation.njk" %}
 
     <main class="{{ bodyClass }}__main">
       {{ content | safe }}
     </main>
+
+    {% if hasFooter %}
+      {% include "_footer.njk" %}
+    {% endif %}
   </body>
 </html>
