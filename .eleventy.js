@@ -1,5 +1,7 @@
 module.exports = (eleventyConfig) => {
 
+  // Prevent clashing with static_assets folder (which is git-ignored)
+  eleventyConfig.setUseGitIgnore(false);
   // Copy static_assets folder to dist
   eleventyConfig.addPassthroughCopy("src/static_assets");
   // Copy admin (CMS) folder to dist

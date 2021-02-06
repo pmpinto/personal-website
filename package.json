@@ -11,7 +11,7 @@
     "eleventy": "npx @11ty/eleventy",
     "build:eleventy": "npm run eleventy",
     "build:sass": "npm run sass -- --stop-on-error",
-    "watch:eleventy": "npm run clean && npx @11ty/eleventy --serve --watch",
+    "watch:eleventy": "npm run clean && npm run eleventy -- --serve --port=8080",
     "watch:sass": "npm run sass -- --watch"
   },
   "keywords": [
