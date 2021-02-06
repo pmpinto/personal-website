@@ -4,6 +4,8 @@
 }
 
 body {
+  padding-top: $nav-height-small;
+
   @include breakpoint-above-tablet {
     padding-top: $nav-height-big;
   }
