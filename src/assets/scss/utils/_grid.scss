@@ -12,16 +12,20 @@ $columns: $grid-total-columns;
 
 @while $columns > 0 {
   .grid-col-#{$columns} {
-    @include breakpoint-above-tablet {
-      @include grid($columns, 6);
-    }
-
-    @include breakpoint-above-desktop-small {
-      @include grid($columns, 12);
-    }
-
     &:last-of-type {
       margin-right: 0;
+    }
+  }
+
+  .grid-col-#{$columns}-tablet {
+    @include breakpoint-above-tablet {
+      @include grid($columns, $grid-total-columns);
+    }
+  }
+
+  .grid-col-#{$columns}-desktop-small {
+    @include breakpoint-above-desktop-small {
+      @include grid($columns, $grid-total-columns);
     }
   }
 

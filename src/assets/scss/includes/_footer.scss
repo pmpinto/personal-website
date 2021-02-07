@@ -19,7 +19,7 @@
     @include breakpoint-above-tablet {
       @include grid-dimension(1);
 
-      height: unit(16);
+      height: unit(20);
       padding-bottom: unit(2.5);
       padding-left: unit(2.5);
       padding-right: unit(2.5);
@@ -27,26 +27,18 @@
 
     @include breakpoint-above-desktop-small {
       right: 11.5%;
-      height: unit(22);
-      padding-bottom: unit(3.3);
-      padding-left: unit(3.3);
-      padding-right: unit(3.3);
-    }
-
-    @include breakpoint-above-desktop-medium {
-      right: 11%;
-      height: unit(25);
+      height: unit(32);
       padding-bottom: unit(4);
       padding-left: unit(4);
       padding-right: unit(4);
     }
 
     @include breakpoint-above-desktop-large {
-      right: 10.6%;
-      height: unit(29);
-      padding-bottom: unit(4.5);
-      padding-left: unit(4.5);
-      padding-right: unit(4.5);
+      // right: 10.6%;
+      // height: unit(32);
+      padding-bottom: unit(5);
+      padding-left: unit(5);
+      padding-right: unit(5);
     }
   }
 
