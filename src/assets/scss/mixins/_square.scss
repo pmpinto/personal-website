@@ -1,0 +1,10 @@
+@mixin square($width-unit: 1) {
+  width: unit($width-unit);
+
+  &::after {
+    // Force square
+    content: '';
+    display: block;
+    padding-bottom: 100%;
+  }
+}

@@ -1,8 +1,14 @@
 ---
 layout: base
-title: Lots of history!
+title: The History
+header:
+  heading: The History
+  blurb: Developing websites is both fun and challenging. Not only through the design process, but also the implementation. I get to regularly try new approaches and do things I haven't done before.
+  textAlign: left
+bodyClass: history
 hasFooter: true
 ---
+{% include "_page-header.njk" %}
 
 <ul>
 {% for event in collections.history %}
@@ -15,3 +21,5 @@ hasFooter: true
   </li>
 {% endfor %}
 </ul>
+
+{% include "_grid.njk" %}

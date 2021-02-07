@@ -1,12 +1,9 @@
 @import '../functions/unit';
 
-$unit-base-unitless: 8;
-$unit-base: rem($unit-base-unitless);
+$unit-base: 8;
+$unit-base-rem: rem($unit-base);
 
-$grid-total-columns: 12;
-$grid-column-width: unit(11);
-$grid-gutter-width: unit(4);
-
-$nav-height-small: rem(49px);
+$nav-height-small: unit(6);
+$nav-height-medium: unit(8);
 $nav-height-big: unit(11);
 

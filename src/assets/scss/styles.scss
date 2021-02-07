@@ -10,14 +10,12 @@
 @import 'variables/layers';
 
 @import 'mixins/breakpoints';
-@import 'mixins/grid';
+@import 'mixins/square';
 @import 'mixins/typography';
 @import 'mixins/buttons';
 
 @import 'functions/rem';
 @import 'functions/unit';
-
-@import 'utils/grid';
 
 @import 'includes/globals';
 @import 'includes/navigation';

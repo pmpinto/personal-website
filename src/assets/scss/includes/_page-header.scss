@@ -1,0 +1,47 @@
+.page-header {
+  padding-top: unit(6);
+  padding-bottom: unit(6);
+  padding-left: unit(1);
+  padding-right: unit(1);
+  text-align: center;
+
+  @include breakpoint-above-phone-medium {
+    padding-left: unit(2);
+    padding-right: unit(2);
+  }
+
+  @include breakpoint-above-tablet {
+    padding-left: unit(2);
+    padding-right: unit(2);
+  }
+
+  @include breakpoint-above-desktop-small {
+    padding-top: unit(10);
+    padding-bottom: unit(10);
+  }
+
+  &__heading {
+    @include text-title;
+
+    margin-bottom: unit(2);
+
+    @include breakpoint-above-tablet {
+      margin-bottom: unit(4);
+    }
+
+    @include breakpoint-above-desktop-small {
+      margin-bottom: unit(8);
+    }
+  }
+
+  &__blurb {
+    @include text-subtitle;
+
+  }
+
+  &--align-left {
+    .page-header__blurb {
+      text-align: left;
+    }
+  }
+}

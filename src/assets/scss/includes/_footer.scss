@@ -5,10 +5,10 @@
   &__ribbon {
     background-color: $color-brand;
     position: absolute;
-    right: $grid-gutter-width;
+    right: unit(3);
     top: 0;
     width: $nav-height-small;
-    height: $nav-height-small * 2;
+    height: unit(13);
     display: flex;
     justify-content: center;
     align-items: flex-end;
@@ -17,29 +17,28 @@
     padding-right: unit(2);
 
     @include breakpoint-above-tablet {
-      @include grid-dimension(1);
-
+      width: unit(8);
       height: unit(20);
       padding-bottom: unit(2.5);
       padding-left: unit(2.5);
       padding-right: unit(2.5);
+      right: calc(#{$nav-height-medium} + #{unit(2)});
     }
 
     @include breakpoint-above-desktop-small {
-      right: 11.5%;
+      width: unit(12);
       height: unit(32);
       padding-bottom: unit(4);
       padding-left: unit(4);
       padding-right: unit(4);
+      right: calc(#{$nav-height-big} + #{unit(2)});
     }
 
-    @include breakpoint-above-desktop-large {
-      // right: 10.6%;
-      // height: unit(32);
-      padding-bottom: unit(5);
-      padding-left: unit(5);
-      padding-right: unit(5);
-    }
+    // @include breakpoint-above-desktop-large {
+    //   // padding-bottom: unit(5);
+    //   // padding-left: unit(5);
+    //   // padding-right: unit(5);
+    // }
   }
 
   &__logo {
@@ -47,24 +46,21 @@
   }
 
   &__top {
-    padding-left: $grid-gutter-width;
-    padding-right: $grid-gutter-width;
+    position: relative;
     padding-top: unit(3);
     padding-bottom: unit(3);
+    padding-left: unit(3);
 
     @include breakpoint-above-tablet {
       padding-top: unit(6);
       padding-bottom: unit(6);
+      padding-left: calc(#{$nav-height-medium} + #{unit(2)});
     }
 
     @include breakpoint-above-desktop-small {
-      @include grid-indent(1);
-      @include grid-indent-right(1);
-
-      padding-left: 0;
-      padding-right: 0;
       padding-top: unit(11);
       padding-bottom: unit(11);
+      padding-left: calc(#{$nav-height-big} + #{unit(2)});
     }
   }
 
@@ -79,13 +75,13 @@
       display: flex;
       align-items: center;
       justify-content: space-between;
-      padding-left: $grid-gutter-width;
-      padding-right: $grid-gutter-width;
+      padding-left: calc(#{$nav-height-medium} + #{unit(2)});
+      padding-right: calc(#{$nav-height-medium} + #{unit(2)});
     }
 
     @include breakpoint-above-desktop-small {
-      @include grid-indent(1, $property: padding-left);
-      @include grid-indent-right(1, $property: padding-right);
+      padding-left: calc(#{$nav-height-big} + #{unit(2)});
+      padding-right: calc(#{$nav-height-big} + #{unit(2)});
     }
   }
 
@@ -112,6 +108,10 @@
     list-style: none;
     display: flex;
     justify-content: center;
+
+    // @include breakpoint-above-tablet {
+    //   justify-content: flex-start;
+    // }
   }
 
   &__link {
@@ -122,9 +122,12 @@
     @include text-body;
 
     text-align: center;
+    margin-bottom: 0;
+    margin-top: unit(1);
 
     @include breakpoint-above-tablet {
       margin: 0;
+      text-align: right;
     }
   }
 }
@@ -135,7 +138,16 @@
 
   @include breakpoint-above-tablet {
     margin-left: 0;
+    margin-right: unit(3);
+  }
+
+  @include breakpoint-above-desktop-small {
     margin-right: unit(4);
   }
 }
 
+.footer__top .grid-row {
+  // @include breakpoint-above-tablet {
+  //   justify-content: center;
+  // }
+}

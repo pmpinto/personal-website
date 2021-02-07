@@ -3,7 +3,19 @@
     @content;
   }
 }
+@mixin breakpoint-below($breakpoint-value) {
+  @media screen and (max-width: #{$breakpoint-value - 1px}) {
+    @content;
+  }
+}
+@mixin breakpoint-between($breakpoint-value-min, $breakpoint-value-max) {
+  @media screen and (min-width: #{$breakpoint-value-min}) and (max-width: #{$breakpoint-value-max - 1px}) {
+    @content;
+  }
+}
 
+
+// Min width
 @mixin breakpoint-above-phone-small {
   @include breakpoint-above($breakpoint-phone-small) {
     @content;
@@ -42,6 +54,28 @@
 
 @mixin breakpoint-above-desktop-large {
   @include breakpoint-above($breakpoint-desktop-large) {
+    @content;
+  }
+}
+
+
+// Max width
+@mixin breakpoint-below-tablet {
+  @include breakpoint-below($breakpoint-tablet) {
+    @content;
+  }
+}
+
+@mixin breakpoint-below-desktop-small {
+  @include breakpoint-below($breakpoint-desktop-small) {
+    @content;
+  }
+}
+
+
+// Between
+@mixin breakpoint-between-tablet-and-desktop-small {
+  @include breakpoint-between($breakpoint-tablet, $breakpoint-desktop-small) {
     @content;
   }
 }

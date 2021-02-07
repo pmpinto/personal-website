@@ -3,9 +3,46 @@
   overflow-x: scroll;
   position: fixed;
   width: 100vw;
+  height: $nav-height-small;
   top: 0;
   left: 0;
   z-index: $layers-navigation;
+
+  @include breakpoint-above-tablet {
+    height: $nav-height-medium;
+  }
+
+  @include breakpoint-above-desktop-small {
+    height: $nav-height-big;
+  }
+
+  &::after { // Right gradient mask
+    width: $nav-height-small;
+    height: $nav-height-small;
+    content: '';
+    display: block;
+    background-color: $color-white;
+    // stylelint-disable-next-line
+    background: linear-gradient(
+      90deg,
+      fade-out($color-white, 1) 0%,
+      $color-white 75%
+    );
+    pointer-events: none;
+    position: fixed;
+    top: 0;
+    right: 0;
+    z-index: $layers-navigation;
+
+    @include breakpoint-above-tablet {
+      width: $nav-height-medium;
+      height: $nav-height-medium;
+    }
+
+    @include breakpoint-above-desktop-small {
+      display: none;
+    }
+  }
 
   &__list {
     display: flex;
@@ -17,44 +54,21 @@
     list-style: none;
     white-space: nowrap;
 
-    &::after { // Right gradient mask
-      @include grid-dimension(1);
-      @include grid-dimension(1, $property: padding-bottom);
-
-      content: '';
-      display: block;
-      background-color: $color-white;
-      // stylelint-disable-next-line
-      background: linear-gradient(
-        90deg,
-        fade-out($color-white, 1) 0%,
-        $color-white 75%
-      );
-      pointer-events: none;
-      position: fixed;
-      right: 0;
-      top: 0;
-    }
-
     @include breakpoint-above-tablet {
       padding-left: unit(16);
     }
 
     @include breakpoint-above-desktop-small {
-      height: unit(13.33);
       padding-left: 0;
       white-space: normal;
       justify-content: flex-end;
       align-items: center;
-
-      &::after {
-        display: none;
-      }
+      height: $nav-height-big;
     }
 
-    @include breakpoint-above-desktop-large {
-      height: unit(15.15);
-    }
+    // @include breakpoint-above-desktop-large {
+    //   height: unit(15.15);
+    // }
   }
 
   &__item--home {
@@ -70,15 +84,13 @@
     left: 0;
     top: 0;
     z-index: $layers-navigation;
-    box-shadow: $grid-gutter-width / 2 0 $grid-gutter-width / 2 $color-white;
     transition:
       background-size $timings-slow ease-in-out,
       background-position $timings-slow ease-in-out;
 
     @include breakpoint-above-tablet {
-      @include grid-square(1);
-
-      height: auto;
+      width: $nav-height-medium;
+      height: $nav-height-medium;
       background-size: unit(3);
 
       &:hover {
@@ -88,8 +100,9 @@
     }
 
     @include breakpoint-above-desktop-small {
-      box-shadow: none;
-      background-size: unit(5);
+      width: $nav-height-big;
+      height: $nav-height-big;
+      background-size: unit(4);
 
       &:hover {
         background-position: bottom unit(3) left unit(3);
@@ -97,14 +110,14 @@
       }
     }
 
-    @include breakpoint-above-desktop-large {
-      background-size: unit(5.5);
+    // @include breakpoint-above-desktop-large {
+    //   background-size: unit(5.5);
 
-      &:hover {
-        background-position: bottom unit(3.7) left unit(3.7);
-        background-size: unit(20);
-      }
-    }
+    //   &:hover {
+    //     background-position: bottom unit(3.7) left unit(3.7);
+    //     background-size: unit(20);
+    //   }
+    // }
   }
 
   &__link {
@@ -116,7 +129,7 @@
     display: block;
 
     @include breakpoint-above-tablet {
-      line-height: 537%; // 🤷‍♂️
+      line-height: $nav-height-medium;
     }
 
     @include breakpoint-above-desktop-small {
@@ -128,18 +141,31 @@
 .navigation__item--home .navigation__link {
   color: transparent;
   display: block;
-  width: 100%;
+  width: $nav-height-small;
   height: $nav-height-small;
   position: absolute;
 
   @include breakpoint-above-tablet {
-    height: 100%;
+    width: $nav-height-medium;
+    height: $nav-height-medium;
+  }
+
+  @include breakpoint-above-desktop-small {
+    width: $nav-height-big;
+    height: $nav-height-big;
   }
 }
 
 .navigation__item:not(.navigation__item--home) {
-  margin-right: $grid-gutter-width;
-  height: 100%;
+  margin-right: unit(4);
+
+  @include breakpoint-above-tablet {
+    margin-right: unit(6);
+  }
+
+  @include breakpoint-above-desktop-small {
+    margin-right: unit(6);
+  }
 
   .navigation__link {
     position: relative;
@@ -148,7 +174,7 @@
       content: '';
       display: block;
       width: 0;
-      height: rem(2px);
+      height: 2px;
       background-color: $color-action;
       transition: width $timings-normal ease-in-out;
       position: absolute;
@@ -161,10 +187,6 @@
       }
     }
   }
-
-  @include breakpoint-above-desktop-small {
-    height: auto;
-  }
 }
 
 .navigation__item:last-of-type {
@@ -172,7 +194,11 @@
 
   // stylelint-disable-next-line
   .navigation__link {
-    margin-right: $grid-gutter-width;
+    margin-right: unit(4);
+
+    @include breakpoint-above-tablet {
+      margin-right: unit(6);
+    }
   }
 }
 

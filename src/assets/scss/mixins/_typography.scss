@@ -22,6 +22,14 @@
   @include breakpoint-above-desktop-small {
     font-size: $font-size-caption / 0.8;
   }
+
+  @include breakpoint-above-desktop-medium {
+    font-size: $font-size-caption / 0.9;
+  }
+
+  @include breakpoint-above-desktop-large {
+    font-size: $font-size-caption / 0.96;
+  }
 }
 
 // Body

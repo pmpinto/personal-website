@@ -1,0 +1,12 @@
+<header class="page-header page-header--align-{{ header.textAlign }}">
+  <div class="grid-wrapper">
+    <div class="grid-row">
+      <div class="grid-col-6-tablet grid-indent-col-1-tablet">
+        <h1 class="page-header__heading">{{ header.heading }}</h1>
+        <div class="page-header__blurb">
+          {{ header.blurb | markdownify | safe }}
+        </div>
+      </div>
+    </div>
+  </div>
+</header>
