@@ -33,12 +33,6 @@
       padding-right: unit(4);
       right: calc(#{$nav-height-big} + #{unit(2)});
     }
-
-    // @include breakpoint-above-desktop-large {
-    //   // padding-bottom: unit(5);
-    //   // padding-left: unit(5);
-    //   // padding-right: unit(5);
-    // }
   }
 
   &__logo {
@@ -108,10 +102,6 @@
     list-style: none;
     display: flex;
     justify-content: center;
-
-    // @include breakpoint-above-tablet {
-    //   justify-content: flex-start;
-    // }
   }
 
   &__link {
@@ -144,10 +134,4 @@
   @include breakpoint-above-desktop-small {
     margin-right: unit(4);
   }
-}
-
-.footer__top .grid-row {
-  // @include breakpoint-above-tablet {
-  //   justify-content: center;
-  // }
 }
