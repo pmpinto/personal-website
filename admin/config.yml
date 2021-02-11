@@ -30,6 +30,35 @@ publish_mode: editorial_workflow
 site_url: https://pedropinto.me
 # logo_url: /images/logo.svg
 
+##################################################################################################
+# Aliases
+##################################################################################################
+aliases:
+  fields:
+    - &FIELD_BLURB
+      label: 'Blurb'
+      name: 'blurb'
+      widget: 'string'
+
+    - &FIELD_BODY
+      name: 'body'
+      label: 'Body'
+      widget: 'markdown'
+
+    - &FIELD_DATE
+      label: 'Date'
+      name: 'date'
+      widget: 'datetime'
+      date_format: YYYY-MM-DD
+      time_format: HH:mm:ss ZZ
+      format: YYYY-MM-DDTHH:mm:ssZZ
+      picker_utc: false
+
+    - &FIELD_TITLE
+      name: 'title'
+      label: 'Title'
+      widget: 'string'
+
 
 ####################################################################################################
 # Collections
@@ -64,12 +93,22 @@ collections:
   ##################################################################################################
   - name: history
     label: 📜 The History
+    label_singular: History Event
     folder: src/history
+    preview_path: 'history/'
+    description: 'Life events. | Can be seen at pedropinto.me/history'
+    summary: "{{date | date('YYYY')}} — {{title}}"
     create: true
+    sortable_fields:
+      - 'date'
+      - 'title'
     fields:
-      - name: title
-        label: Title
-        widget: string
+      - <<: *FIELD_TITLE
+
+      - <<: *FIELD_DATE
+        time_format: false
+
+      - <<: *FIELD_BODY
 
   ##################################################################################################
   ## Collection: Designer
