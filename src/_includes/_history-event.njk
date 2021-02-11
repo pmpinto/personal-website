@@ -7,6 +7,6 @@
   </div>
   <div class="history__right">
     <h3 class="history__event-title">{{ title }}</h3>
-    <p class="history__event-blurb">{{ blurb }}</p>
+    <div class="history__event-blurb">{{ content | safe }}</div>
   </div>
 </li>

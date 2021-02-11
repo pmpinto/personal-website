@@ -114,3 +114,23 @@
     border-color: fade-out($color: $color-red-dark, $amount: $alpha-8);
   }
 }
+
+
+// Markdown
+@mixin text-markdown() {
+  p {
+    margin: 0;
+
+    + p {
+      margin-top: unit(2);
+    }
+  }
+
+  strong {
+    font-weight: $font-weight-semibold;
+  }
+
+  a {
+    @include text-link();
+  }
+}

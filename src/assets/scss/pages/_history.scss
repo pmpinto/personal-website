@@ -91,6 +91,7 @@
 
     &-blurb {
       @include text-body();
+      @include text-markdown();
 
       margin: 0;
     }

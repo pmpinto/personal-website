@@ -16,6 +16,7 @@ hasFooter: true
     {% set myAge = year - site.author.born %}
     {% set title = event.data.title %}
     {% set blurb = event.data.blurb %}
+    {% set content = event.templateContent %}
 
     {% if loop.last %}
       <li class="history__separator"><span class="history__separator-text">…</span></li>
