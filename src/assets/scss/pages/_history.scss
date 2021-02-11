@@ -1,7 +1,127 @@
 .history {
+  &__events {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    padding-left: unit(3);
+    padding-right: unit(3);
 
-}
+    @include breakpoint-above-tablet {
+      padding-left: unit(11);
+      padding-right: unit(11);
+    }
 
-ul {
-  display: none;
+    @include breakpoint-above-desktop-small {
+      padding-left: unit(28);
+      padding-right: unit(28);
+    }
+
+    @include breakpoint-above-desktop-large {
+      padding-left: unit(32);
+      padding-right: unit(32);
+    }
+  }
+
+  &__left {
+    display: flex;
+    align-items: baseline;
+    margin-bottom: unit(2);
+
+    @include breakpoint-above-tablet {
+      display: block;
+      margin-right: unit(8);
+      flex: 2;
+      text-align: right;
+    }
+
+    @include breakpoint-above-desktop-small {
+      margin-right: unit(12);
+    }
+
+    @include breakpoint-above-desktop-large {
+      margin-right: unit(16);
+    }
+  }
+
+  &__right {
+    @include breakpoint-above-tablet {
+      flex: 5;
+    }
+  }
+
+  &__event {
+    padding-top: unit(4);
+    padding-bottom: unit(4);
+
+    &:last-of-type {
+      padding-bottom: 0;
+    }
+
+    @include breakpoint-above-tablet {
+      display: flex;
+    }
+
+    @include breakpoint-above-desktop-small {
+      padding-top: unit(8);
+      padding-bottom: unit(8);
+    }
+
+    &-date {
+      @include text-jumbo();
+    }
+
+    &-age {
+      @include text-body();
+
+      margin: 0;
+      margin-left: unit(1);
+      color: $color-text-muted;
+
+      @include breakpoint-above-tablet {
+        margin-left: 0;
+        text-align: right;
+      }
+    }
+
+    &-title {
+      @include text-subtitle();
+
+      margin-bottom: unit(1);
+    }
+
+    &-blurb {
+      @include text-body();
+
+      margin: 0;
+    }
+
+  }
+
+  &__separator {
+    @include text-jumbo();
+
+    padding-bottom: unit(1);
+
+    @include breakpoint-above-tablet {
+      display: flex;
+      justify-content: space-between;
+      text-align: right;
+      width: 100%;
+
+      &::after {
+        content: '';
+        flex: 2.9;
+      }
+    }
+
+    @include breakpoint-above-desktop-small {
+      &::after {
+        flex: 3;
+      }
+    }
+  }
+
+  &__separator-text {
+    flex: 1;
+  }
 }

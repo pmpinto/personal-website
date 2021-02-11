@@ -1,0 +1,12 @@
+<li class="history__event">
+  <div class="history__left">
+    <h2 class="history__event-date">{{ year }}</h2>
+    {% if myAge %}
+      <p class="history__event-age">{{ myAge }} years old</p>
+    {% endif %}
+  </div>
+  <div class="history__right">
+    <h3 class="history__event-title">{{ title }}</h3>
+    <p class="history__event-blurb">{{ blurb }}</p>
+  </div>
+</li>

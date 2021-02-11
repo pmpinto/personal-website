@@ -1,6 +1,15 @@
 .footer {
   background-color: $color-white;
   position: relative;
+  margin-top: unit(6);
+
+  @include breakpoint-above-tablet {
+    margin-top: unit(8);
+  }
+
+  @include breakpoint-above-desktop-small {
+    margin-top: unit(16);
+  }
 
   &__ribbon {
     background-color: $color-brand;

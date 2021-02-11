@@ -3,7 +3,8 @@
   "author": {
     "name": "Pedro Pinto",
     "city": "Porto",
-    "country": "Portugal"
+    "country": "Portugal",
+    "born": 1988
   },
   "title": "Developer by trade. Designer at heart.",
   "titleSeparator": "•"

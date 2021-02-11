@@ -10,15 +10,17 @@ hasFooter: true
 ---
 {% include "_page-header.njk" %}
 
-<ul>
-{% for event in collections.history %}
-  <li>
-    <a href="{{ event.url }}">
-      <h2>{{ event.data.title }}</h2>
-      <p>{{ event.date }}</p>
-      <p>{{ event.data.description }}</p>
-    </a>
-  </li>
-{% endfor %}
-</ul>
+<ul class="history__events">
+  {% for event in collections.history | reverse %}
+    {% set year = event.date.getFullYear() %}
+    {% set myAge = year - site.author.born %}
+    {% set title = event.data.title %}
+    {% set blurb = event.data.blurb %}
 
+    {% if loop.last %}
+      <li class="history__separator"><span class="history__separator-text">…</span></li>
+    {% endif %}
+
+    {% include "_history-event.njk" %}
+  {% endfor %}
+</ul>
