@@ -4,13 +4,16 @@
   "description": "Personal website of Pedro Pinto: https://pedropinto.me",
   "main": "index.js",
   "scripts": {
-    "start": "npm-run-all sass --parallel watch:*",
     "build": "npm run clean && npm-run-all build:*",
     "clean": "rm -rf dist",
-    "sass": "sass --style=compressed --color src/assets/scss/styles.scss src/static_assets/css/styles.css",
     "eleventy": "npx @11ty/eleventy",
+    "sass": "sass --style=compressed --color src/assets/scss/styles.scss src/static_assets/css/styles.css",
+    "start": "npm-run-all sass babel --parallel watch:*",
+    "babel": "babel src/assets/javascript/scripts.js -o src/static_assets/javascript/scripts.js --presets=@babel/preset-env",
     "build:eleventy": "npm run eleventy",
+    "build:babel": "npm run babel -- --source-maps",
     "build:sass": "npm run sass -- --stop-on-error",
+    "watch:babel": "npm run babel -- --watch",
     "watch:eleventy": "npm run clean && npm run eleventy -- --serve --port=8080",
     "watch:sass": "npm run sass -- --watch"
   },
@@ -24,8 +27,15 @@
   ],
   "author": "Pedro Pinto",
   "license": "ISC",
+  "browserslist": [
+    "defaults",
+    "not IE 11"
+  ],
   "devDependencies": {
     "@11ty/eleventy": "^0.11.1",
+    "@babel/cli": "^7.12.16",
+    "@babel/core": "^7.12.16",
+    "@babel/preset-env": "^7.12.16",
     "npm-run-all": "^4.1.5",
     "stylelint": "^13.9.0",
     "stylelint-config-recommended-scss": "^4.2.0",
