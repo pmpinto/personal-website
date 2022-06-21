@@ -1,0 +1,58 @@
+.words {
+  &__posts {
+    margin: 0;
+    padding: 0;
+  }
+
+  &__post {
+    list-style: none;
+    margin-bottom: unit(8);
+    padding-left: unit(3);
+    padding-right: unit(3);
+
+    @include breakpoint-above-phone-medium {
+      padding-left: unit(8);
+      padding-right: unit(8);
+    }
+
+    @include breakpoint-above-phone-large {
+      padding-left: unit(18);
+      padding-right: unit(18);
+    }
+
+    @include breakpoint-above-desktop-small {
+      padding-left: unit(32);
+      padding-right: unit(32);
+    }
+
+    @include breakpoint-above-desktop-large {
+      padding-left: unit(48);
+      padding-right: unit(48);
+    }
+  }
+
+  &__link {
+    text-decoration: none;
+
+    &:hover,
+    &:focus {
+      .words__title {
+        color: $color-action;
+      }
+    }
+  }
+
+  &__title {
+    @include text-subtitle();
+
+    transition: color $timings-normal $timings-ease-out-quart;
+  }
+
+  &__excerpt {
+    @include text-body();
+
+    color: $color-text-muted;
+    margin-bottom: 0;
+    margin-top: unit(1);
+  }
+}

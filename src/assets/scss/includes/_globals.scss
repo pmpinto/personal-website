@@ -1,9 +1,9 @@
 * {
   box-sizing: border-box;
-  font-family: $font-family;
 }
 
 body {
+  font-family: $font-family;
   background-color: $color-background;
   padding-top: $nav-height-small;
 
@@ -22,10 +22,10 @@ body {
 }
 
 html {
-  font-size: 4.7vw;
+  font-size: 4.8vw;
 
   @include breakpoint-above-phone-medium {
-    font-size: 3.7vw;
+    font-size: 4vw;
   }
 
   @include breakpoint-above-phone-large {
@@ -37,7 +37,11 @@ html {
   }
 
   @include breakpoint-above-desktop-small {
-    font-size: 1.25vw;
+    font-size: 1.5vw;
+  }
+
+  @include breakpoint-above-desktop-medium {
+    font-size: 1.3vw;
   }
 
   @include breakpoint-above-desktop-large {

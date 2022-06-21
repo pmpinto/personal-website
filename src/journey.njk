@@ -1,0 +1,21 @@
+---
+layout: base
+title: Journey
+bodyClass: journey
+hasFooter: true
+---
+<ul class="journey__events">
+  {% for event in collections.journey | reverse %}
+    {% set year = event.date.getFullYear() %}
+    {% set myAge = year - site.author.born %}
+    {% set title = event.data.title %}
+    {% set blurb = event.data.blurb %}
+    {% set content = event.templateContent %}
+
+    {% if loop.last %}
+      <li class="journey__separator"><span class="journey__separator-text">…</span></li>
+    {% endif %}
+
+    {% include "_journey-event.njk" %}
+  {% endfor %}
+</ul>

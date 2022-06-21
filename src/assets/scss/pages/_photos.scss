@@ -1,0 +1,80 @@
+.photos {
+  &__albums {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    padding-left: unit(3);
+    padding-right: unit(3);
+
+    @include breakpoint-above-tablet {
+      padding-left: unit(11);
+      padding-right: unit(11);
+    }
+
+    @include breakpoint-above-desktop-small {
+      padding-left: unit(28);
+      padding-right: unit(28);
+    }
+
+    @include breakpoint-above-desktop-large {
+      padding-left: unit(32);
+      padding-right: unit(32);
+    }
+  }
+
+  &__link {
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;
+    color: $color-text;
+    text-decoration: none;
+    padding: unit(1) unit(2);
+    transition:
+      color $timings-normal $timings-ease-out-quart,
+      background-color $timings-normal $timings-ease-out-quart;
+
+    &:hover,
+    &:focus {
+      background-color: $color-white;
+
+      .photos__heading,
+      .photos__amount {
+        color: $color-action;
+      }
+    }
+
+    @include breakpoint-above-tablet {
+      padding: unit(2) unit(3);
+    }
+  }
+
+  &__album {
+    &:not(:last-of-type) {
+      .photos__link {
+        border-bottom: 1px solid $color-detail;
+      }
+    }
+  }
+
+  &__title {
+    max-width: 90%;
+  }
+
+  &__heading {
+    @include text-subtitle();
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
+  }
+
+  &__year {
+    @include text-caption();
+  }
+
+  &__amount {
+    @include text-subtitle();
+
+    width: 10%;
+    text-align: right;
+  }
+}

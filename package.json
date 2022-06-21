@@ -7,15 +7,16 @@
     "build": "npm run clean && npm-run-all build:*",
     "clean": "rm -rf dist",
     "eleventy": "npx @11ty/eleventy",
+    "esbuild": "esbuild src/assets/javascript/scripts.js --bundle --outfile=src/static_assets/javascript/bundle.js",
     "sass": "sass --style=compressed --color src/assets/scss/styles.scss src/static_assets/css/styles.css",
-    "start": "npm-run-all sass babel --parallel watch:*",
-    "babel": "babel src/assets/javascript/scripts.js -o src/static_assets/javascript/scripts.js --presets=@babel/preset-env",
+    "start": "npm-run-all sass esbuild --parallel watch:*",
     "build:eleventy": "npm run eleventy",
-    "build:babel": "npm run babel -- --source-maps",
+    "build:esbuild": "npm run esbuild -- --minify",
     "build:sass": "npm run sass -- --stop-on-error",
-    "watch:babel": "npm run babel -- --watch",
     "watch:eleventy": "npm run clean && npm run eleventy -- --serve --port=8080",
-    "watch:sass": "npm run sass -- --watch"
+    "watch:esbuild": "npm run esbuild -- --watch --sourcemap",
+    "watch:sass": "npm run sass -- --watch",
+    "photographer:create-from-photos": "node ./scripts/photographer-entry-from-photo.js"
   },
   "keywords": [
     "personal",
@@ -32,17 +33,30 @@
     "not IE 11"
   ],
   "devDependencies": {
-    "@11ty/eleventy": "^0.11.1",
-    "@babel/cli": "^7.12.16",
-    "@babel/core": "^7.12.16",
-    "@babel/preset-env": "^7.12.16",
+    "@11ty/eleventy": "^1.0.1",
+    "@11ty/eleventy-plugin-syntaxhighlight": "^4.0.0",
+    "cz-conventional-changelog": "^3.3.0",
+    "esbuild": "^0.8.46",
+    "eslint": "^7.20.0",
+    "eslint-config-airbnb-base": "^14.2.1",
+    "eslint-plugin-import": "^2.22.1",
     "npm-run-all": "^4.1.5",
     "stylelint": "^13.9.0",
     "stylelint-config-recommended-scss": "^4.2.0",
     "stylelint-scss": "^3.18.0"
   },
   "dependencies": {
+    "exif": "^0.6.0",
+    "imagesloaded": "^4.1.4",
+    "infinite-scroll": "^4.0.1",
+    "isotope-layout": "^3.0.6",
+    "markdown-it-classy": "^0.2.0",
     "normalize.css": "^8.0.1",
     "sass": "^1.32.5"
+  },
+  "config": {
+    "commitizen": {
+      "path": "./node_modules/cz-conventional-changelog"
+    }
   }
 }

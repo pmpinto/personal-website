@@ -1,0 +1,12 @@
+{% set year = album.date.getFullYear() %}
+{% set photos = album.data.items | withProperty('camera') %}
+
+<li class="photos__album">
+  <a href="{{ album.url }}" class="photos__link" title="{{ album.data.header.heading }}">
+    <div class="photos__title">
+      <h2 class="photos__heading">{{ album.data.header.heading }} <span class="photos__year">{{ year }}</span></h2>
+    </div>
+
+    <div class="photos__amount">{{ photos.length }}</div>
+  </a>
+</li>

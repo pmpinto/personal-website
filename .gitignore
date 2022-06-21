@@ -1,3 +1,4 @@
 dist
 node_modules
 src/static_assets
+.DS_Store

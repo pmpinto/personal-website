@@ -1,3 +1,8 @@
 $timings-fast: 150ms;
 $timings-normal: 250ms;
 $timings-slow: 350ms;
+$timings-slower: 500ms;
+
+$timings-spinner: 550ms;
+
+$timings-ease-out-quart: cubic-bezier(0.25, 1, 0.5, 1);

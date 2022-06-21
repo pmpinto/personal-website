@@ -1,17 +1,20 @@
 $color-white: #ffffff;
 $color-grey-light: #FAF5F5;
-$color-grey-dark: #191818;
 $color-red: #F52727;
-$color-red-dark: #331E18;
-$color-black: #111111;
+$color-dark-red: #66101F;
+$color-black: #07222B;
+
+$color-overlay: fade-out($color-black, $alpha-2);
+$color-detail: fade-out($color: $color-black, $amount: $alpha-7);
+$color-detail-faint: fade-out($color: $color-black, $amount: $alpha-6 + $alpha-1);
 
 $color-brand: $color-red;
 $color-text: $color-black;
-$color-text-muted: fade-out($color-black, $alpha-4);
+$color-text-muted: fade-out($color-black, $alpha-3);
 $color-background: $color-grey-light;
 
 $color-theme-dark-text: $color-grey-light;
-$color-theme-dark-background: $color-grey-dark;
+$color-theme-dark-background: $color-black;
 
 $color-action: $color-brand;
-$color-action-hover: lighten($color-action, 5%);
+$color-action-hover: darken($color-action, 25%);

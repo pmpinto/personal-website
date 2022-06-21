@@ -16,8 +16,20 @@
     height: $nav-height-big;
   }
 
-  &::after { // Right gradient mask
-    width: $nav-height-small;
+  // Gradient masks
+  &::before {
+    left: $nav-height-small;
+    right: auto;
+    transform: rotate(180deg);
+
+    @include breakpoint-above-tablet {
+      left: $nav-height-medium;
+    }
+  }
+
+  &::after,
+  &::before {
+    width: $nav-height-small / 2;
     height: $nav-height-small;
     content: '';
     display: block;
@@ -35,7 +47,7 @@
     z-index: $layers-navigation;
 
     @include breakpoint-above-tablet {
-      width: $nav-height-medium;
+      width: $nav-height-medium / 2;
       height: $nav-height-medium;
     }
 
@@ -56,68 +68,15 @@
 
     @include breakpoint-above-tablet {
       padding-left: unit(16);
+      justify-content: flex-end;
     }
 
     @include breakpoint-above-desktop-small {
       padding-left: 0;
       white-space: normal;
-      justify-content: flex-end;
       align-items: center;
       height: $nav-height-big;
     }
-
-    // @include breakpoint-above-desktop-large {
-    //   height: unit(15.15);
-    // }
-  }
-
-  &__item--home {
-    width: $nav-height-small;
-    height: $nav-height-small;
-    margin-right: auto;
-    background-color: $color-brand;
-    background-image: url('/static_assets/images/logo-white.svg');
-    background-repeat: no-repeat;
-    background-position: center center;
-    background-size: unit(2);
-    position: fixed;
-    left: 0;
-    top: 0;
-    z-index: $layers-navigation;
-    transition:
-      background-size $timings-slow ease-in-out,
-      background-position $timings-slow ease-in-out;
-
-    @include breakpoint-above-tablet {
-      width: $nav-height-medium;
-      height: $nav-height-medium;
-      background-size: unit(3);
-
-      &:hover {
-        background-position: bottom unit(2) left unit(2);
-        background-size: unit(11);
-      }
-    }
-
-    @include breakpoint-above-desktop-small {
-      width: $nav-height-big;
-      height: $nav-height-big;
-      background-size: unit(4);
-
-      &:hover {
-        background-position: bottom unit(3) left unit(3);
-        background-size: unit(18);
-      }
-    }
-
-    // @include breakpoint-above-desktop-large {
-    //   background-size: unit(5.5);
-
-    //   &:hover {
-    //     background-position: bottom unit(3.7) left unit(3.7);
-    //     background-size: unit(20);
-    //   }
-    // }
   }
 
   &__link {
@@ -133,7 +92,48 @@
     }
 
     @include breakpoint-above-desktop-small {
-      line-height: 2.5;
+      line-height: $nav-height-big;
+    }
+  }
+
+  &__item--home {
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1;
+
+    .navigation__link {
+      width: $nav-height-small;
+      height: $nav-height-small;
+      margin-right: auto;
+      background-color: $color-brand;
+      background-image: url('/static_assets/images/logo-white.svg');
+      background-repeat: no-repeat;
+      background-position: center center;
+      background-size: unit(2);
+      position: fixed;
+      left: 0;
+      top: 0;
+      z-index: $layers-navigation;
+      transition:
+        background-color $timings-fast $timings-ease-out-quart;
+
+      @include breakpoint-above-tablet {
+        width: $nav-height-medium;
+        height: $nav-height-medium;
+        background-size: unit(3);
+
+        &:hover,
+        &:focus {
+          background-color: $color-action-hover;
+        }
+      }
+
+      @include breakpoint-above-desktop-small {
+        width: $nav-height-big;
+        height: $nav-height-big;
+        background-size: unit(4);
+      }
     }
   }
 }
@@ -164,26 +164,37 @@
   }
 
   @include breakpoint-above-desktop-small {
-    margin-right: unit(6);
+    margin-right: unit(8);
   }
 
   .navigation__link {
     position: relative;
 
+    // Fake underline
     &::after {
       content: '';
       display: block;
       width: 0;
       height: 2px;
       background-color: $color-action;
-      transition: width $timings-normal ease-in-out;
+      transition: width $timings-slower $timings-ease-out-quart;
       position: absolute;
       bottom: 0;
+      will-change: width;
     }
 
-    &:hover {
+    &:hover,
+    &:focus {
       &::after {
         width: 100%;
+      }
+    }
+  }
+
+  &.navigation__item--active {
+    .navigation__link {
+      &::after {
+        width: 98%;
       }
     }
   }

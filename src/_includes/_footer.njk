@@ -12,11 +12,10 @@
   <div class="footer__bottom">
     <ul class="footer__list">
     {% for link in footer.footer.links %}
-      <li><a href="{{ link.url }}" class="footer__link">{{ link.label }}</a></li>
+      <li><a href="{{ link.url }}" class="footer__link" target="_blank" rel="noopener noreferrer">{{ link.label }}</a></li>
     {% endfor %}
     </ul>
 
-    <p class="footer__author"><a href="/" class="footer__link">{{ site.domain }}</a>, {{ footer.footer.yearCreated }} — {{ footer.footer.yearCurrent }}</p>
+    <p class="footer__author"><a href="/" class="footer__link">{{ site.domain }}</a>, {{ footer.footer.yearCreated }} — {% currentYear %}</p>
   </div>
-
 </footer>

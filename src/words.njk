@@ -1,0 +1,16 @@
+---
+layout: base
+title: Words
+header:
+  heading: Words
+  blurb: Developing websites is both fun and challenging. Not only through the design process, but also the implementation. I get to regularly try new approaches and do things I haven't done before.
+bodyClass: words
+hasFooter: true
+---
+{% include "_page-header.njk" %}
+
+<ul class="words__posts">
+  {% for post in collections.post | reverse %}
+    {% include "_words-post.njk" %}
+  {% endfor %}
+</ul>

@@ -3,7 +3,7 @@
     <li class="navigation__item navigation__item--home"><a class="navigation__link" href="/">Home</a></li>
 
     {% for link in navigation.links %}
-      <li class="navigation__item">
+      <li class="navigation__item {% if page.url.indexOf(link.url) === 0 %}navigation__item--active{% endif %}">
         <a class="navigation__link" href="{{ link.url | url }}">{{ link.label }}</a>
       </li>
     {% endfor %}

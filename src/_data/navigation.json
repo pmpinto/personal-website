@@ -1,8 +1,8 @@
 {
   "links": [
-    { "label": "The History", "url": "/history/" },
-    { "label": "The Designer", "url": "/designer/" },
-    { "label": "The Photographer", "url": "/photographer/" },
-    { "label": "The Writer", "url": "/writer/" }
+    { "label": "Journey", "url": "/journey/" },
+    { "label": "Projects", "url": "/projects/" },
+    { "label": "Photos", "url": "/photos/" },
+    { "label": "Words", "url": "/words/" }
   ]
 }

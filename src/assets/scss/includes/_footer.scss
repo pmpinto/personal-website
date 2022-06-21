@@ -1,14 +1,14 @@
 .footer {
   background-color: $color-white;
   position: relative;
-  margin-top: unit(6);
+  margin-top: unit(10);
 
   @include breakpoint-above-tablet {
-    margin-top: unit(8);
+    margin-top: unit(16);
   }
 
-  @include breakpoint-above-desktop-small {
-    margin-top: unit(16);
+  @include breakpoint-above-desktop-large {
+    margin-top: unit(20);
   }
 
   &__ribbon {
@@ -106,6 +106,8 @@
   }
 
   &__list {
+    @include text-body;
+
     margin: 0;
     padding: 0;
     list-style: none;

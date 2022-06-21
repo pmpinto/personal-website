@@ -1,0 +1,19 @@
+---
+layout: base
+bodyClass: album
+hasFooter: true
+---
+{% include "_page-header.njk" %}
+
+<div class="album__content">
+  {% for item in items %}
+    {% if item.text %}
+      <div class="album__text">{{ item.text | markdownify | safe }}</div>
+    {% else %}
+      <figure class="album__figure">
+        <img loading="lazy" src="{{ item.file }}" alt="photo" class="album__image">
+        <figcaption class="album__caption">{{ item.camera }}{% if item.lens %} with {{ item.lens }}{% endif %} at {{ item.aperture }}, {{ item.shutter }} and {{ item.iso }} ISO</figcaption>
+      </figure>
+    {% endif %}
+  {% endfor %}
+</div>

@@ -1,0 +1,24 @@
+// .projects {}
+
+.projects__grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+
+  div {
+    padding-top: 100%;
+  }
+
+  div:nth-child(1) {
+    background-color: fade-out($color: $color-black, $amount: 0.75);
+  }
+  div:nth-child(2) {
+    background-color: fade-out($color: $color-grey-light, $amount: 0.25);
+  }
+  div:nth-child(3) {
+    background-color: fade-out($color: $color-brand, $amount: 0.5);
+  }
+  div:nth-child(4) {
+    background-color: fade-out($color: $color-brand, $amount: 0.75);
+  }
+}
+

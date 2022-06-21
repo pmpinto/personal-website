@@ -3,7 +3,7 @@
   color: $color-text;
 
   &__main {
-    min-height: 100vh;
+    min-height: calc(100vh - #{$nav-height-small});
     text-align: center;
     display: flex;
     align-items: center;
@@ -12,34 +12,39 @@
     background-image: url('/static_assets/images/logo-red.svg');
     background-repeat: no-repeat;
     background-size: 150vw;
-    background-position: -60vw 42vh;
+    background-position: -60vw 70vh;
     padding: unit(8) unit(4);
 
     @include breakpoint-above-tablet {
+      min-height: calc(100vh - #{$nav-height-medium});
       padding: unit(10) unit(10);
       background-size: 100vw;
-      background-position: -17vw 41vh;
+      background-position: 0vw 70vh;
     }
 
     @include breakpoint-above-desktop-small {
+      min-height: calc(100vh - #{$nav-height-big});
       padding: unit(14) unit(14);
+      background-size: 100vw;
+      background-position: 0vw 66vh;
     }
   }
 
   &__header {
+    z-index: 1;
   }
 
   &__heading {
     @include text-jumbo;
 
-    margin-bottom: unit(4);
+    margin-bottom: unit(2);
 
     @include breakpoint-above-tablet {
-      margin-bottom: unit(6);
+      margin-bottom: unit(4);
     }
 
     @include breakpoint-above-desktop-small {
-      margin-bottom: unit(8);
+      margin-bottom: unit(4);
     }
   }
 
