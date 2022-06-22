@@ -62,17 +62,16 @@
     justify-content: flex-start;
     margin: 0;
     padding: 0;
-    padding-left: unit(12);
+    padding-left: unit(10);
     list-style: none;
     white-space: nowrap;
 
     @include breakpoint-above-tablet {
-      padding-left: unit(16);
+      padding-left: 0;
       justify-content: flex-end;
     }
 
     @include breakpoint-above-desktop-small {
-      padding-left: 0;
       white-space: normal;
       align-items: center;
       height: $nav-height-big;
@@ -156,17 +155,29 @@
   }
 }
 
-.navigation__item:not(.navigation__item--home) {
+.navigation__item:not(:last-of-type) {
   margin-right: unit(4);
 
   @include breakpoint-above-tablet {
-    margin-right: unit(6);
+    margin-right: unit(5);
   }
 
   @include breakpoint-above-desktop-small {
-    margin-right: unit(8);
+    margin-right: unit(6);
   }
+}
 
+.navigation__item:last-of-type {
+  .navigation__link {
+    margin-right: unit(4);
+
+    @include breakpoint-above-tablet {
+      margin-right: unit(6);
+    }
+  }
+}
+
+.navigation__item:not(.navigation__item--home) {
   .navigation__link {
     position: relative;
 
@@ -199,17 +210,3 @@
     }
   }
 }
-
-.navigation__item:last-of-type {
-  margin-right: 0;
-
-  // stylelint-disable-next-line
-  .navigation__link {
-    margin-right: unit(4);
-
-    @include breakpoint-above-tablet {
-      margin-right: unit(6);
-    }
-  }
-}
-
