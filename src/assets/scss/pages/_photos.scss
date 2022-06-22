@@ -97,11 +97,11 @@
     transform: translateZ(1px);
     transition:
       filter $timings-normal $timings-ease-out-quart,
-      transform $timings-normal $timings-ease-out-quart;
+      transform $timings-super-slow $timings-ease-out-quart;
 
     .photos__link:hover & {
       filter: saturate(1);
-      transform: scale(1.05);
+      transform: scale(1.025);
     }
 
     @include breakpoint-above-desktop-small {
