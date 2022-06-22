@@ -155,6 +155,10 @@
     color: $color-background;
     position: relative;
 
+    @include breakpoint-above-tablet {
+      padding: unit(1.5) unit(3);
+    }
+
     @include breakpoint-above-desktop-small {
       padding: unit(2) unit(4);
     }
@@ -172,22 +176,55 @@
     }
 
     &::before {
-      transform: scale(0.85) translateX(#{unit(2.5)});
       background-color: desaturate($color: lighten($color: $color-black, $amount: 40), $amount: 60);
       z-index: -1;
+      transform: scale(0.85) translateX(#{unit(1.5)});
 
       .photos__link:hover & {
-        transform: scale(0.85) translateX(#{unit(4)});
+        transform: scale(0.85) translateX(#{unit(2)});
+      }
+
+      @include breakpoint-above-tablet {
+        transform: scale(0.85) translateX(#{unit(2)});
+
+        .photos__link:hover & {
+          transform: scale(0.85) translateX(#{unit(3)});
+        }
+      }
+
+      @include breakpoint-above-desktop-small {
+        transform: scale(0.85) translateX(#{unit(2.5)});
+
+        .photos__link:hover & {
+          transform: scale(0.85) translateX(#{unit(4)});
+        }
       }
     }
 
     &::after {
-      transform: scale(0.70) translateX(#{unit(6)});
       background-color: desaturate($color: lighten($color: $color-black, $amount: 60), $amount: 60);
       z-index: -2;
+      transform: scale(0.70) translateX(#{unit(3.5)});
 
       .photos__link:hover & {
-        transform: scale(0.70) translateX(#{unit(9)});
+        transform: scale(0.70) translateX(#{unit(4.5)});
+      }
+
+      @include breakpoint-above-tablet {
+        transform: scale(0.70) translateX(#{unit(4.5)});
+
+        .photos__link:hover & {
+          transform: scale(0.70) translateX(#{unit(6.5)});
+        }
+      }
+
+      @include breakpoint-above-desktop-small {
+        transform: scale(0.70) translateX(#{unit(6)});
+
+        .photos__link:hover & {
+          transform: scale(0.70) translateX(#{unit(9)});
+        }
+
       }
     }
   }
