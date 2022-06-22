@@ -1,11 +1,15 @@
-@mixin grid() {
+@mixin grid($has-gap: true) {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
-  column-gap: unit(2);
+  @if $has-gap {
+    column-gap: unit(2);
+  }
 
   @include breakpoint-above-tablet {
     grid-template-columns: repeat(6, 1fr);
-    column-gap: unit(4);
+    @if $has-gap {
+      column-gap: unit(4);
+    }
   }
 
   @include breakpoint-above-desktop-small {

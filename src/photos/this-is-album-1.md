@@ -1,7 +1,7 @@
 ---
-header:
-  heading: This is first Album
-  blurb: Developing websites is both fun and challenging. Not only through the design process, but also the implementation. I get to regularly try new approaches and do things I haven't done before.
+title: This is first Album
+blurb: Developing websites is both fun and challenging. Not only through the design process, but also the implementation. I get to regularly try new approaches and do things I haven't done before.
+cover: /static_assets/images/uploads/resized/IMG_7389.jpg
 date: 2020-11-03
 items:
   - camera: Canon EOS 70D

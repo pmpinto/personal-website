@@ -1,8 +1,6 @@
 ---
 title: Carapinha
-header:
-  heading: Carapinha
-  blurb: Developing websites is both fun and challenging. Not only through the design process, but also the implementation. I get to regularly try new approaches and do things I haven't done before.
+blurb: Developing websites is both fun and challenging. Not only through the design process, but also the implementation. I get to regularly try new approaches and do things I haven't done before.
 date: 2020-08-23
 items:
   - camera: Canon EOS 70D

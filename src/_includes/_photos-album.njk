@@ -1,12 +1,17 @@
 {% set year = album.date.getFullYear() %}
 {% set photos = album.data.items | withProperty('camera') %}
+{% set coverImage = album.data.cover if album.data.cover else album.data.items[0].file %}
 
 <li class="photos__album">
-  <a href="{{ album.url }}" class="photos__link" title="{{ album.data.header.heading }}">
-    <div class="photos__title">
-      <h2 class="photos__heading">{{ album.data.header.heading }} <span class="photos__year">{{ year }}</span></h2>
+  <a href="{{ album.url }}" class="photos__link">
+    <div class="photos__text">
+      <h2 class="photos__heading">{{ album.data.title }} <span class="photos__year">{{ year }}</span></h2>
+      <p class="photos__blurb">{{ album.data.blurb }}</p>
+      <div class="photos__amount" title="{{ photos.length }} photos in this album">{{ photos.length }}</div>
     </div>
 
-    <div class="photos__amount">{{ photos.length }}</div>
+    <div class="photos__cover">
+      <img src="{{ coverImage }}" alt="cover photo" class="photos__cover-file">
+    </div>
   </a>
 </li>
