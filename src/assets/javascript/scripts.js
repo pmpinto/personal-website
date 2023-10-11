@@ -1,33 +1,9 @@
-// import {
-//   buildIsotopeGrid, setupEvents, setupFilters, setupInfiniteScroll,
-// } from './photographer'
+// import { Application } from '@hotwired/stimulus'
 
-// const isotopeOptions = {
-//   itemSelector: '.photographer__photo-item',
-//   percentPosition: true,
-//   layoutMode: 'masonry',
-//   stagger: 32,
-//   transitionDuration: 128,
-//   hiddenStyle: {
-//     opacity: 0,
-//     transform: 'scale(0.32)',
-//   },
-//   visibleStyle: {
-//     opacity: 1,
-//     transform: 'scale(1)',
-//   },
-//   masonry: {
-//     gutter: '.photographer__photo-grid-gutter',
-//     horizontalOrder: true,
-//     columnWidth: '.photographer__photo-item',
-//   },
-// }
+// import NavigationController from './controllers/navigation_controller'
+// import AppController from './controllers/app_controller'
 
-// const isotopeGrid = buildIsotopeGrid('.photographer__photo-grid', isotopeOptions)
+// window.Stimulus = Application.start()
 
-// console.log('>', 'wat ', isotopeGrid)
-// setupFilters(isotopeGrid)
-
-// setupEvents(isotopeGrid)
-
-// setupInfiniteScroll(isotopeGrid)
+// window.Stimulus.register('navigation', NavigationController)
+// window.Stimulus.register('app', AppController)

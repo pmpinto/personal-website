@@ -1,16 +1,13 @@
 {
-  "extends": "stylelint-config-recommended",
+  "extends": ["stylelint-config-recommended", "stylelint-config-standard-scss"],
   "plugins": ["stylelint-scss"],
+  "ignoreFiles": ["**/*.js", "**/*.md", "**/*.xml", ".eleventy.js"],
+  "overrides": [
+    {
+      "files": [".scss"]
+    }
+  ],
   "rules": {
-    "declaration-block-no-duplicate-properties": true,
-    "shorthand-property-no-redundant-values": true,
-    "declaration-no-important": true,
-    "property-no-vendor-prefix": true,
-    "selector-max-id": 0,
-    "string-quotes": "single",
-    "scss/dollar-variable-colon-space-after": "always",
-    "scss/dollar-variable-colon-space-before": "never",
-    "at-rule-no-unknown": null,
     "at-rule-allowed-list": [
       "charset",
       "counter-style",
@@ -30,7 +27,19 @@
       "page",
       "return",
       "supports",
+      "use",
       "while"
-    ]
+    ],
+    "at-rule-no-unknown": null,
+    "declaration-block-no-duplicate-properties": true,
+    "declaration-no-important": true,
+    "property-no-vendor-prefix": true,
+    "scss/dollar-variable-colon-space-after": "always",
+    "scss/dollar-variable-colon-space-before": "never",
+    "scss/dollar-variable-empty-line-before": null,
+    "selector-max-id": 0,
+    "shorthand-property-no-redundant-values": true,
+    "string-quotes": "single",
+    "selector-class-pattern": null
   }
 }

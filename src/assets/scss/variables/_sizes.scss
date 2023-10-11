@@ -1,9 +1,6 @@
 @import '../functions/unit';
 
 $unit-base: 8;
-$unit-base-rem: rem($unit-base);
+$unit-base-rem: 0.5rem;
 
-$nav-height-small: unit(6);
-$nav-height-medium: unit(8);
-$nav-height-big: unit(11);
-
+$global-max-width: rem(1280px);

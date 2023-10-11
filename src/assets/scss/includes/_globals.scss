@@ -1,19 +1,16 @@
 * {
   box-sizing: border-box;
+  font-family: $font-family;
 }
 
 body {
-  font-family: $font-family;
-  background-color: $color-background;
-  padding-top: $nav-height-small;
+  background-color: $color-white;
+  color: $color-text;
+  font-weight: $font-weight-regular;
+}
 
-  @include breakpoint-above-tablet {
-    padding-top: $nav-height-medium;
-  }
-
-  @include breakpoint-above-desktop-small {
-    padding-top: $nav-height-big;
-  }
+body.is-scroll-locked {
+  overflow: hidden;
 }
 
 html,
@@ -22,29 +19,44 @@ body {
 }
 
 html {
-  font-size: 4.8vw;
+  font-size: 16px;
+  scroll-behavior: smooth;
+}
 
-  @include breakpoint-above-phone-medium {
-    font-size: 4vw;
-  }
+::selection {
+  background-color: $color-brand;
+  color: $color-white;
+}
 
-  @include breakpoint-above-phone-large {
-    font-size: 2.7vw;
-  }
+.wrapper {
+  // max-width: $global-max-width;
+  // margin-left: auto;
+  // margin-right: auto;
+  padding-left: units(3);
+  padding-right: units(3);
 
   @include breakpoint-above-tablet {
-    font-size: 2vw;
+    padding-left: units(6);
+    padding-right: units(6);
   }
 
   @include breakpoint-above-desktop-small {
-    font-size: 1.5vw;
+    padding-left: 0;
+    padding-right: 0;
   }
 
-  @include breakpoint-above-desktop-medium {
-    font-size: 1.3vw;
-  }
+  // @include breakpoint-above-desktop-medium {
+  //   padding-left: units(4);
+  //   padding-right: units(4);
+  // }
+}
 
-  @include breakpoint-above-desktop-large {
-    font-size: 1.1vw;
-  }
+.visually-hidden {
+  clip: rect(0 0 0 0);
+  clip-path: inset(50%);
+  height: 1px;
+  overflow: hidden;
+  position: absolute;
+  white-space: nowrap;
+  width: 1px;
 }

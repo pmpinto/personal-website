@@ -1,28 +1,14 @@
-@mixin grid($has-gap: true) {
+@mixin grid-wrapper {
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  @if $has-gap {
-    column-gap: unit(2);
-  }
+  grid-template-columns: 1fr;
+  row-gap: $grid-gutter;
 
   @include breakpoint-above-tablet {
     grid-template-columns: repeat(6, 1fr);
-    @if $has-gap {
-      column-gap: unit(4);
-    }
+    column-gap: $grid-gutter;
   }
 
   @include breakpoint-above-desktop-small {
     grid-template-columns: repeat(12, 1fr);
-  }
-}
-
-@mixin horizontal-paddings() {
-  padding-left: unit(3);
-  padding-right: unit(3);
-
-  @include breakpoint-above-tablet {
-    padding-left: unit(4);
-    padding-right: unit(4);
   }
 }

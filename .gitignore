@@ -1,4 +1,7 @@
 dist
 node_modules
-src/static_assets
+src/assets/data/knowledge_base.json
+src/static_assets/css
+src/static_assets/javascript
 .DS_Store
+.vscode
