@@ -2,7 +2,7 @@
 {% if title %}
   {% set pageTitle %}{{ title }} — {{ site.brand }}{% endset %}
 {% else %}
-  {% set pageTitle %}{{ site.title }}{% endset %}
+  {% set pageTitle %}{{ site.title }} — {{ site.brand }}{% endset %}
 {% endif %}
 <title>{{ pageTitle | safe }}</title>
 <meta property="og:title" content="{{ pageTitle | safe }}" />

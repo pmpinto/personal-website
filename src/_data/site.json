@@ -1,6 +1,6 @@
 {
   "brand": "Pedro Pinto",
-  "title": "Pedro Pinto — Developer by trade. Designer at heart.",
+  "title": "Developer by trade. Designer at heart.",
   "url": "https://pedropinto.me",
   "email": "pedro@pedropinto.me",
   "metadata": {
@@ -8,9 +8,8 @@
   },
   "social": {
     "twitter": "pmpinto",
-    "instagram": "pmpinto"
-  },
-  "pagination": {
-    "postsPerPage": 8
+    "instagram": "pmpinto",
+    "github": "pmpinto",
+    "lastfm": "xoldmanx"
   }
 }

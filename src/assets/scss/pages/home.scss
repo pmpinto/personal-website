@@ -1,5 +1,105 @@
-// @import '../includes/imports';
+@import '../includes/imports';
 
-// .home {
-//   background-color: green;
-// }
+@keyframes slide-in {
+  from {
+    transform: translate(-100%, 100%);
+  }
+
+  to {
+    transform: translate(0, 0);
+  }
+}
+
+.home {
+  background-color: $color-grey;
+  padding: units(3);
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  position: relative;
+  overflow: hidden;
+
+  @include dark-mode {
+    background-color: $color-coal;
+    color: $color-grey;
+  }
+
+  // Background
+  &::before {
+    content: '';
+    position: absolute;
+    top: calc(#{units(32)} + 40vh);
+    width: 100%;
+    height: 100%;
+    z-index: $layers-below;
+    background-image: url('/static_assets/images/logo-background.svg');
+    background-repeat: no-repeat;
+    background-size: 120%;
+    left: units(-3);
+    background-position: top right;
+    animation-name: slide-in;
+    animation-duration: $timings-slowest;
+    animation-timing-function: $ease-out-expo;
+    animation-iteration-count: 1;
+    animation-delay: $timings-slowest;
+    animation-fill-mode: backwards;
+
+    @include breakpoint-above-tablet {
+      background-position: top center;
+      top: calc(#{units(32)} + 48vh);
+      left: units(-8);
+      background-size: 100%;
+    }
+
+    @include breakpoint-above-desktop-small {
+      background-size: units(92);
+    }
+  }
+
+  @include breakpoint-above-tablet {
+    align-items: center;
+  }
+}
+
+.home__main {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  gap: units(5);
+  max-width: rem(560px);
+}
+
+.home__title {
+  @include text-title;
+}
+
+.home__blurb {
+  @include text-lead;
+
+  color: $color-muted-dark;
+
+  @include dark-mode {
+    color: $color-muted-bright;
+  }
+}
+
+.home__about {
+  @include text-body;
+}
+
+.home__list {
+  display: flex;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  column-gap: units(4);
+  row-gap: units(2);
+  flex-wrap: wrap;
+}
+
+// .home__item {}
+
+.home__link {
+  @include text-body;
+  @include text-link;
+}

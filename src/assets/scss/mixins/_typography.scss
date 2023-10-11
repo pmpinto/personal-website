@@ -32,7 +32,7 @@
 // Lead
 @mixin text-lead() {
   font-size: $font-size-lead;
-  font-weight: $font-weight-regular;
+  font-weight: $font-weight-light;
   line-height: 1.429;
   margin-top: 0;
   margin-bottom: 0;
@@ -64,23 +64,47 @@
 
 // Link
 @mixin text-link() {
+  white-space: nowrap;
+  color: $color-black;
+  text-decoration: none;
+  padding-left: 0.2em;
+  padding-right: 0.2em;
   position: relative;
+  transition: color $timings-normal $ease-out-expo;
+  z-index: 1;
 
-  // Underline
-  &::after {
-    content: '';
-    width: 0%;
-    height: 2px;
-    display: block;
-    background-color: $color-brand;
-    position: absolute;
-    bottom: -5px;
-    transition: width $timings-normal $ease-out-expo;
+  @include dark-mode {
+    color: $color-white;
   }
 
-  @include hover-and-focus {
+  // Red accent
+  &::after {
+    content: '';
+    display: block;
+    position: absolute;
+    bottom: rem(-2px);
+    left: 0.2em;
+    height: rem(1px);
+    width: calc(100% - 0.4em);
+    background-color: $color-brand;
+    transition: height $timings-fast $ease-out-expo,
+      width $timings-fast $ease-out-expo,
+      background-color $timings-normal $ease-out-expo;
+    z-index: -1;
+    pointer-events: none; // Fixes hover flickering
+  }
+
+  &:hover,
+  &:focus {
+    color: $color-white;
+
+    // Red accent
     &::after {
+      height: calc(100% + #{rem(4px)});
       width: 100%;
+      left: 0;
+      background-color: $color-action;
+      transform: skew(-8deg, -2deg);
     }
   }
 }

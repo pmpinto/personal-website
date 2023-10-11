@@ -7,8 +7,9 @@ $color-dark-red: #331e18;
 $color-coal: #191818;
 $color-black: #111;
 
-// $color-detail: #afb5c048;
-// $color-muted: #211f3b88;
+$color-detail: fade-out($color-coal, $alpha-5);
+$color-muted-dark: fade-out($color-coal, $alpha-4);
+$color-muted-bright: fade-out($color-grey, $alpha-4);
 
 $color-brand: $color-red;
 $color-text: $color-coal;
