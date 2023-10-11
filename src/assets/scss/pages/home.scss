@@ -53,6 +53,8 @@
 
     @include breakpoint-above-desktop-small {
       background-size: units(92);
+      top: auto;
+      bottom: calc(#{units(16)} - 88vh);
     }
   }
 
