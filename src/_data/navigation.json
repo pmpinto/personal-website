@@ -1,8 +1,0 @@
-{
-  "links": [
-    { "label": "Journey", "url": "/journey/" },
-    { "label": "Projects", "url": "/projects/" },
-    { "label": "Photos", "url": "/photos/" },
-    { "label": "Words", "url": "/words/" }
-  ]
-}

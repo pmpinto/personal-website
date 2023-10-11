@@ -1,11 +1,15 @@
 {
-  "domain": "pedropinto.me",
-  "author": {
-    "name": "Pedro Pinto",
-    "city": "Porto",
-    "country": "Portugal",
-    "born": 1988
-  },
+  "brand": "Pedro Pinto",
   "title": "Developer by trade. Designer at heart.",
-  "titleSeparator": "•"
+  "url": "https://pedropinto.me",
+  "email": "pedro@pedropinto.me",
+  "metadata": {
+    "default_image": "https://pedropinto.me/static_assets/images/metadata/default.png"
+  },
+  "social": {
+    "twitter": "pmpinto",
+    "instagram": "pmpinto",
+    "github": "pmpinto",
+    "lastfm": "xoldmanx"
+  }
 }

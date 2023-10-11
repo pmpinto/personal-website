@@ -1,34 +1,12 @@
 @import '../../../node_modules/normalize.css/normalize';
 
-@import 'variables/fonts';
-@import 'variables/typography';
-@import 'variables/breakpoints';
-@import 'variables/sizes';
-@import 'variables/timings';
-@import 'variables/alpha';
-@import 'variables/colors';
-@import 'variables/layers';
+// SCSS utilities
+@import 'includes/imports';
 
-@import 'mixins/breakpoints';
-@import 'mixins/typography';
-@import 'mixins/buttons';
-@import 'mixins/misc';
-@import 'mixins/grid';
-
-@import 'functions/rem';
-@import 'functions/unit';
-
-@import 'utils/spinner';
-
+// Global Styles
 @import 'includes/globals';
-@import 'includes/navigation';
-@import 'includes/footer';
-@import 'includes/page-header';
 
-@import 'pages/home';
-@import 'pages/journey';
-@import 'pages/photos';
-@import 'pages/album';
-@import 'pages/words';
-@import 'pages/post';
-@import 'pages/projects';
+// Global Components
+// Include global and non-page-specific components here
+// @import 'includes/navigation';
+// @import 'includes/footer';

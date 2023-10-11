@@ -1,1 +1,30 @@
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap');
+/**
+* This is a variable font
+* You can controll variable axes as shown below:
+* font-variation-settings: 'wght' 900.0;
+*
+* available axes:
+
+* 'wght' (range from 300.0 to 900.0)
+
+*/
+
+@font-face {
+  font-family: Satoshi;
+  src: url('/static_assets/fonts/satoshi-variable.woff2') format('woff2'),
+    url('/static_assets/fonts/satoshi-variable.woff') format('woff'),
+    url('/static_assets/fonts/satoshi-variable.ttf') format('truetype');
+  font-weight: 300 900;
+  font-display: swap;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: Satoshi;
+  src: url('/static_assets/fonts/satoshi-variable-italic.woff2') format('woff2'),
+    url('/static_assets/fonts/satoshi-variable-italic.woff') format('woff'),
+    url('/static_assets/fonts/satoshi-variable-italic.ttf') format('truetype');
+  font-weight: 300 900;
+  font-display: swap;
+  font-style: italic;
+}

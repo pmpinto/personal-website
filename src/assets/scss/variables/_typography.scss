@@ -1,13 +1,17 @@
 @import '../functions/rem';
 
-$font-family: 'Inter', 'Helvetica', sans-serif;
+$font-family: 'Satoshi', 'Helvetica', sans-serif;
+$font-family-italic: 'Satoshi-Italic', 'Helvetica', sans-serif;
 
-$font-weight-regular: 400;
-$font-weight-semibold: 600;
-$font-weight-extrabold: 800;
+$font-weight-light: 400;
+$font-weight-regular: 500;
+$font-weight-bold: 800;
+$font-weight-extrabold: 900;
 
-$font-size-caption: rem(12px);
-$font-size-body: rem(17px);
-$font-size-subtitle: rem(27.5px);
-$font-size-title: rem(44.5px);
-$font-size-jumbo: rem(72px);
+$font-size-caption: 0.88rem;
+$font-size-label: 0.618rem;
+$font-size-body: clamp(1rem, calc(0.11vw + 1rem), 1.25rem);
+$font-size-lead: clamp(1.25rem, calc(0.8vw + 1rem), 2.618rem);
+$font-size-subtitle: clamp(1.618rem, calc(2vw + 1rem), 2.618rem);
+$font-size-title: clamp(2.618rem, calc(4vw + 1rem), 4.236rem);
+$font-size-jumbo: clamp(4.236rem, calc(7vw + 1rem), 6.854rem);
